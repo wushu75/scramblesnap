@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Core pages -->
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/#scrabble</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/#wordle</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/#privacy</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/#terms</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- High-traffic unscramble pages -->
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/AELRST</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/SATIRE</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/PLANET</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/GARDEN</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/MASTER</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/STREAM</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/SILENT</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/LISTEN</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/ENLIST</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://wushu75.github.io/scramblesnap/unscramble/TINSEL</loc><lastmod>2026-04-16</lastmod><priority>0.7</priority><changefreq>monthly</changefreq></url>
+
+  <!-- Blog/content pages (publish these to unlock their value) -->
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/blog/scrabble-strategy-guide</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/blog/2-letter-scrabble-words</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/blog/q-without-u-words</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wushu75.github.io/scramblesnap/blog/wordle-tips-strategies</loc>
+    <lastmod>2026-04-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+</urlset>

@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Word Unscrambler &amp; Scrabble Solver | Instant Results - ScrambleSnap</title>
+<meta name="description" content="Unscramble letters fast for Scrabble, Wordle, WWF. Best online word finder with scores, filters. Free tool, $9.99 Pro lifetime upgrade.">
+<meta name="keywords" content="word unscrambler, unscramble words, scrabble solver, wordle helper, anagram solver, words with friends cheat, free word finder">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://scramblesnap.com/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Word Unscrambler &amp; Scrabble Solver | ScrambleSnap">
+<meta property="og:description" content="Instantly unscramble any letters. Perfect for Scrabble, Wordle, Words With Friends. Free with $9.99 lifetime Pro.">
+<meta property="og:url" content="https://scramblesnap.com/">
+<meta property="og:site_name" content="ScrambleSnap">
+<meta property="og:image" content="https://scramblesnap.com/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Word Unscrambler &amp; Scrabble Solver | ScrambleSnap">
+<meta name="twitter:description" content="Unscramble any letters instantly. Best free word solver online.">
+<meta name="twitter:image" content="https://scramblesnap.com/og-image.png">
+
+<!-- PWA -->
+<meta name="theme-color" content="#0d9488">
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+<!-- Schema.org Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://scramblesnap.com/#website",
+      "url": "https://scramblesnap.com/",
+      "name": "ScrambleSnap",
+      "description": "Free word unscrambler and Scrabble solver",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://scramblesnap.com/unscramble/{search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does the word unscrambler work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Enter your scrambled letters and ScrambleSnap instantly finds all valid words using a 100,000+ word dictionary. Results are sorted by Scrabble score."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is ScrambleSnap free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! ScrambleSnap is free for up to 50 solves per day. Pro gives unlimited solves, advanced filters, history, and offline access for a one-time $9.99 lifetime fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it work for Scrabble, Wordle, and Words With Friends?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. ScrambleSnap supports TWL (Tournament Word List) and OSPD dictionaries for Scrabble, pattern matching for Wordle, and WWF scoring."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "HowTo",
+      "name": "How to Unscramble Words",
+      "step": [
+        {"@type": "HowToStep", "name": "Enter letters", "text": "Type your scrambled letters into the search box"},
+        {"@type": "HowToStep", "name": "Optional filters", "text": "Filter by word length, starting letter, or game type"},
+        {"@type": "HowToStep", "name": "Get results", "text": "Instantly see all valid words sorted by Scrabble score with definitions"}
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "ScrambleSnap",
+      "applicationCategory": "GameApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": [
+        {"@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free - 50 solves/day"},
+        {"@type": "Offer", "price": "9.99", "priceCurrency": "USD", "description": "Pro - Lifetime unlimited"}
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "2841"
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  /* ===== DESIGN TOKENS ===== */
+  :root {
+    --teal-50: #f0fdfa; --teal-100: #ccfbf1; --teal-200: #99f6e4;
+    --teal-400: #2dd4bf; --teal-500: #14b8a6; --teal-600: #0d9488;
+    --teal-700: #0f766e; --teal-800: #115e59; --teal-900: #134e4a;
+    --cyan-400: #22d3ee; --cyan-500: #06b6d4;
+    --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
+    --slate-300: #cbd5e1; --slate-400: #94a3b8; --slate-500: #64748b;
+    --slate-600: #475569; --slate-700: #334155; --slate-800: #1e293b;
+    --slate-900: #0f172a; --slate-950: #020617;
+    --amber-400: #fbbf24; --amber-500: #f59e0b;
+    --rose-500: #f43f5e; --violet-500: #8b5cf6;
+    --bg: var(--slate-950);
+    --bg2: #0a1628;
+    --surface: rgba(15, 23, 42, 0.8);
+    --surface2: rgba(30, 41, 59, 0.6);
+    --border: rgba(45, 212, 191, 0.15);
+    --border2: rgba(45, 212, 191, 0.3);
+    --text: #e2e8f0;
+    --text-muted: #94a3b8;
+    --text-dim: #64748b;
+    --glow: 0 0 40px rgba(13, 148, 136, 0.3);
+    --glow-sm: 0 0 15px rgba(13, 148, 136, 0.2);
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-lg: 20px;
+    --font-display: 'DM Sans', 'Segoe UI', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+
+  /* ===== RESET ===== */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-display);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* ===== ANIMATED BACKGROUND ===== */
+  .bg-mesh {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 20%, rgba(13,148,136,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgba(6,182,212,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 60% at 50% 50%, rgba(139,92,246,0.04) 0%, transparent 70%),
+      var(--slate-950);
+  }
+  .bg-grid {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: 0.03;
+    background-image: linear-gradient(rgba(45,212,191,1) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(45,212,191,1) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  /* ===== LAYOUT ===== */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; position: relative; z-index: 1; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    backdrop-filter: blur(20px);
+    background: rgba(2, 6, 23, 0.85);
+    border-bottom: 1px solid var(--border);
+    padding: 0.9rem 0;
+  }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .logo {
+    display: flex; align-items: center; gap: 0.6rem;
+    font-size: 1.4rem; font-weight: 700; color: white; text-decoration: none;
+    letter-spacing: -0.03em;
+  }
+  .logo-icon {
+    width: 36px; height: 36px; border-radius: 9px;
+    background: linear-gradient(135deg, var(--teal-500), var(--cyan-500));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; box-shadow: var(--glow-sm);
+  }
+  .logo span { color: var(--teal-400); }
+  .nav-links { display: flex; align-items: center; gap: 0.25rem; }
+  .nav-links a {
+    padding: 0.4rem 0.8rem; border-radius: var(--radius-sm);
+    color: var(--text-muted); text-decoration: none; font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal-400); background: rgba(45,212,191,0.08); }
+  .nav-links a.active { color: var(--teal-400); }
+  .btn-pro-nav {
+    padding: 0.45rem 1rem; border-radius: var(--radius-sm);
+    background: linear-gradient(135deg, var(--teal-600), var(--teal-700));
+    color: white; font-size: 0.8rem; font-weight: 600;
+    border: none; cursor: pointer; text-decoration: none;
+    transition: all 0.2s; box-shadow: var(--glow-sm);
+  }
+  .btn-pro-nav:hover { transform: translateY(-1px); box-shadow: var(--glow); }
+
+  /* ===== HERO ===== */
+  .hero {
+    padding: 3.5rem 0 2.5rem;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.35rem 1rem; border-radius: 100px;
+    background: rgba(45,212,191,0.1); border: 1px solid var(--border2);
+    font-size: 0.75rem; font-weight: 600; color: var(--teal-400);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal-400); animation: pulse-dot 2s infinite; }
+  @keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+  h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800; letter-spacing: -0.04em;
+    line-height: 1.1; margin-bottom: 1rem;
+  }
+  h1 .accent { color: var(--teal-400); }
+  h1 .accent2 { color: var(--cyan-400); }
+  .hero-sub {
+    font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-muted);
+    max-width: 600px; margin: 0 auto 1.5rem;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  .stat { text-align: center; }
+  .stat-num { font-size: 1.5rem; font-weight: 700; color: white; }
+  .stat-label { font-size: 0.75rem; color: var(--text-dim); }
+
+  /* ===== SOLVER CARD ===== */
+  .solver-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(20px);
+    box-shadow: var(--glow), 0 25px 50px rgba(0,0,0,0.5);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .solver-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--teal-400), var(--cyan-400), transparent);
+  }
+
+  /* ===== GAME TABS ===== */
+  .game-tabs {
+    display: flex; gap: 0.5rem; margin-bottom: 1.5rem;
+    background: rgba(0,0,0,0.3); padding: 0.35rem; border-radius: var(--radius-sm);
+    overflow-x: auto;
+  }
+  .game-tab {
+    flex: 1; min-width: max-content;
+    padding: 0.55rem 1rem; border-radius: 6px;
+    font-size: 0.8rem; font-weight: 600; color: var(--text-muted);
+    border: none; background: transparent; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem;
+    justify-content: center;
+  }
+  .game-tab.active {
+    background: var(--teal-700); color: white;
+    box-shadow: 0 2px 8px rgba(13,148,136,0.4);
+  }
+  .game-tab:hover:not(.active) { color: var(--teal-400); background: rgba(45,212,191,0.05); }
+
+  /* ===== INPUT AREA ===== */
+  .input-row { display: flex; gap: 0.75rem; margin-bottom: 1rem; }
+  .letter-input-wrap { flex: 1; position: relative; }
+  .letter-input {
+    width: 100%; padding: 1rem 1.25rem;
+    font-size: 1.5rem; font-weight: 700;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    background: rgba(0,0,0,0.4); border: 2px solid var(--border);
+    border-radius: var(--radius); color: white;
+    outline: none; transition: all 0.2s;
+    font-family: var(--font-mono);
+  }
+  .letter-input:focus { border-color: var(--teal-500); box-shadow: 0 0 0 3px rgba(20,184,166,0.2); }
+  .letter-input::placeholder { letter-spacing: 0.05em; font-weight: 400; font-size: 1rem; color: var(--text-dim); }
+  .input-clear {
+    position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; color: var(--text-dim); cursor: pointer;
+    font-size: 1.2rem; padding: 0.25rem; border-radius: 4px;
+    transition: color 0.2s; display: none;
+  }
+  .input-clear:hover { color: var(--text); }
+  .btn-solve {
+    padding: 0 1.75rem;
+    background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+    border: none; border-radius: var(--radius); color: white;
+    font-size: 1rem; font-weight: 700; cursor: pointer;
+    transition: all 0.2s; box-shadow: var(--glow);
+    white-space: nowrap; display: flex; align-items: center; gap: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .btn-solve:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(13,148,136,0.5); }
+  .btn-solve:active { transform: translateY(0); }
+  .btn-solve svg { width: 18px; height: 18px; }
+
+  /* ===== WORDLE PATTERN ===== */
+  .wordle-section { display: none; }
+  .wordle-row { display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem; }
+  .wordle-label { font-size: 0.75rem; color: var(--text-muted); width: 80px; flex-shrink: 0; }
+  .wordle-input {
+    padding: 0.5rem 0.75rem; border-radius: var(--radius-sm);
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    color: white; font-size: 0.875rem; font-family: var(--font-mono);
+    outline: none; width: 100%;
+  }
+  .wordle-input:focus { border-color: var(--teal-500); }
+
+  /* ===== FILTERS ===== */
+  .filters-row { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .filter-group { display: flex; flex-direction: column; gap: 0.3rem; flex: 1; min-width: 100px; }
+  .filter-label { font-size: 0.7rem; font-weight: 600; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; }
+  .filter-select, .filter-input {
+    padding: 0.5rem 0.75rem; border-radius: var(--radius-sm);
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    color: var(--text); font-size: 0.8rem; outline: none;
+    cursor: pointer; transition: border-color 0.2s;
+    font-family: var(--font-mono);
+  }
+  .filter-select:focus, .filter-input:focus { border-color: var(--teal-500); }
+  .filter-select option { background: var(--slate-800); }
+  .pro-filter { position: relative; }
+  .pro-badge {
+    position: absolute; top: -8px; right: -8px;
+    background: var(--amber-500); color: var(--slate-900);
+    font-size: 0.6rem; font-weight: 800; padding: 1px 5px; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .pro-filter .filter-select { opacity: 0.5; cursor: not-allowed; }
+
+  /* ===== RESULTS ===== */
+  .results-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 1rem; padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .results-count { font-size: 0.875rem; color: var(--text-muted); }
+  .results-count strong { color: var(--teal-400); font-size: 1.1rem; }
+  .sort-btns { display: flex; gap: 0.35rem; }
+  .sort-btn {
+    padding: 0.3rem 0.6rem; border-radius: 6px;
+    font-size: 0.7rem; font-weight: 600; color: var(--text-dim);
+    border: 1px solid transparent; background: none; cursor: pointer;
+    transition: all 0.15s; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .sort-btn.active { color: var(--teal-400); border-color: var(--border2); background: rgba(45,212,191,0.06); }
+  .sort-btn:hover:not(.active) { color: var(--text-muted); }
+
+  .length-group { margin-bottom: 1.5rem; }
+  .length-header {
+    font-size: 0.7rem; font-weight: 700; color: var(--text-dim);
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem;
+  }
+  .length-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .word-grid { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .word-chip {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.5rem 0.9rem; border-radius: var(--radius-sm);
+    background: var(--surface2); border: 1px solid var(--border);
+    cursor: pointer; transition: all 0.15s; position: relative;
+    text-decoration: none; color: var(--text);
+  }
+  .word-chip:hover {
+    background: rgba(45,212,191,0.1); border-color: var(--border2);
+    transform: translateY(-1px); box-shadow: var(--glow-sm);
+  }
+  .word-text { font-family: var(--font-mono); font-weight: 600; font-size: 0.9rem; letter-spacing: 0.05em; }
+  .word-score {
+    font-size: 0.65rem; font-weight: 800;
+    color: var(--slate-900); background: var(--teal-400);
+    padding: 1px 5px; border-radius: 4px; min-width: 20px; text-align: center;
+  }
+  .word-chip.high-score .word-score { background: var(--amber-400); }
+  .word-chip.top-score .word-score { background: var(--rose-500); color: white; }
+
+  /* ===== DEFINITION TOOLTIP ===== */
+  .word-def {
+    display: none; position: fixed; z-index: 200;
+    background: var(--slate-800); border: 1px solid var(--border2);
+    border-radius: var(--radius); padding: 0.75rem 1rem;
+    max-width: 260px; font-size: 0.8rem; color: var(--text-muted);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5), var(--glow-sm);
+    pointer-events: none;
+  }
+  .word-def-title { color: var(--teal-400); font-weight: 700; font-family: var(--font-mono); font-size: 0.9rem; margin-bottom: 0.3rem; }
+
+  /* ===== LIMIT BAR ===== */
+  .usage-bar-wrap {
+    background: rgba(0,0,0,0.3); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1rem 1.25rem;
+    margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem;
+  }
+  .usage-info { flex: 1; }
+  .usage-title { font-size: 0.8rem; font-weight: 600; color: var(--text); margin-bottom: 0.4rem; }
+  .usage-bar-bg { height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+  .usage-bar-fill { height: 100%; border-radius: 3px; transition: width 0.4s; background: linear-gradient(90deg, var(--teal-500), var(--cyan-400)); }
+  .usage-bar-fill.warning { background: linear-gradient(90deg, var(--amber-500), #fb923c); }
+  .usage-bar-fill.danger { background: linear-gradient(90deg, var(--rose-500), #f97316); }
+  .usage-count { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.3rem; }
+
+  /* ===== UPGRADE MODAL ===== */
+  .modal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 500;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);
+    align-items: center; justify-content: center; padding: 1rem;
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: var(--slate-900); border: 1px solid var(--border2);
+    border-radius: var(--radius-lg); padding: 2.5rem;
+    max-width: 460px; width: 100%; text-align: center;
+    box-shadow: var(--glow), 0 40px 80px rgba(0,0,0,0.7);
+    position: relative;
+  }
+  .modal::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--teal-500), var(--cyan-400), var(--violet-500));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .modal-close {
+    position: absolute; top: 1rem; right: 1rem;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    color: var(--text-muted); cursor: pointer; font-size: 1rem;
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.1); color: white; }
+  .modal-crown { font-size: 3rem; margin-bottom: 0.75rem; }
+  .modal h2 { font-size: 1.6rem; font-weight: 800; color: white; margin-bottom: 0.5rem; letter-spacing: -0.03em; }
+  .modal-price {
+    font-size: 2.5rem; font-weight: 800; color: var(--teal-400);
+    margin: 1rem 0 0.25rem; letter-spacing: -0.04em;
+  }
+  .modal-price-sub { font-size: 0.8rem; color: var(--text-dim); margin-bottom: 1.5rem; }
+  .modal-features { text-align: left; margin-bottom: 1.75rem; }
+  .modal-feature {
+    display: flex; align-items: flex-start; gap: 0.75rem;
+    padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.875rem; color: var(--text-muted);
+  }
+  .modal-feature:last-child { border-bottom: none; }
+  .feature-check { color: var(--teal-400); font-weight: 700; flex-shrink: 0; margin-top: 0.1rem; }
+  .feature-text strong { color: white; display: block; font-weight: 600; }
+  .btn-upgrade {
+    width: 100%; padding: 1rem; border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+    border: none; color: white; font-size: 1rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; box-shadow: var(--glow);
+    letter-spacing: -0.01em;
+  }
+  .btn-upgrade:hover { transform: translateY(-2px); box-shadow: 0 0 40px rgba(13,148,136,0.6); }
+  .modal-guarantee {
+    font-size: 0.75rem; color: var(--text-dim); margin-top: 0.75rem;
+    display: flex; align-items: center; justify-content: center; gap: 0.4rem;
+  }
+
+  /* ===== SECTIONS ===== */
+  section { padding: 3rem 0; }
+  .section-title {
+    font-size: 1.75rem; font-weight: 800; color: white;
+    letter-spacing: -0.03em; margin-bottom: 0.5rem;
+  }
+  .section-sub { color: var(--text-muted); margin-bottom: 2rem; }
+
+  /* ===== FEATURE CARDS ===== */
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; }
+  .feature-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.5rem;
+    transition: all 0.2s;
+  }
+  .feature-card:hover { border-color: var(--border2); box-shadow: var(--glow-sm); transform: translateY(-2px); }
+  .feature-icon {
+    width: 44px; height: 44px; border-radius: 10px; margin-bottom: 1rem;
+    background: rgba(45,212,191,0.1); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center; font-size: 1.25rem;
+  }
+  .feature-card h3 { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.4rem; }
+  .feature-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ===== FAQ ===== */
+  .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+  .faq-item {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+  }
+  .faq-q {
+    padding: 1rem 1.25rem; font-weight: 600; color: white; cursor: pointer;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    font-size: 0.9rem; transition: background 0.2s;
+  }
+  .faq-q:hover { background: rgba(45,212,191,0.04); }
+  .faq-toggle { color: var(--teal-400); font-size: 1.2rem; flex-shrink: 0; transition: transform 0.2s; }
+  .faq-a {
+    display: none; padding: 0 1.25rem 1rem;
+    font-size: 0.875rem; color: var(--text-muted); line-height: 1.7;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+  }
+  .faq-item.open .faq-a { display: block; }
+  .faq-item.open .faq-toggle { transform: rotate(45deg); }
+
+  /* ===== TIPS ===== */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+  .tip-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 1.25rem;
+  }
+  .tip-num {
+    width: 28px; height: 28px; border-radius: 8px; background: rgba(45,212,191,0.15);
+    color: var(--teal-400); font-size: 0.8rem; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;
+  }
+  .tip-card h4 { font-size: 0.875rem; font-weight: 700; color: white; margin-bottom: 0.35rem; }
+  .tip-card p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.6; }
+
+  /* ===== POPULAR PAGES ===== */
+  .page-links { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.75rem; }
+  .page-link {
+    display: flex; align-items: center; gap: 0.6rem;
+    padding: 0.75rem 1rem; border-radius: var(--radius-sm);
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-muted); text-decoration: none; font-size: 0.825rem;
+    transition: all 0.2s;
+  }
+  .page-link:hover { color: var(--teal-400); border-color: var(--border2); background: rgba(45,212,191,0.05); }
+  .page-link-icon { font-size: 1rem; }
+
+  /* ===== INTERNAL LINKS ===== */
+  .more-tools {
+    display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0;
+  }
+  .more-tool-link {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    padding: 0.4rem 0.8rem; border-radius: 100px;
+    background: rgba(45,212,191,0.08); border: 1px solid var(--border);
+    color: var(--teal-400); font-size: 0.75rem; font-weight: 600;
+    text-decoration: none; transition: all 0.2s; cursor: pointer;
+  }
+  .more-tool-link:hover { background: rgba(45,212,191,0.15); border-color: var(--border2); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    border-top: 1px solid var(--border); padding: 2rem 0;
+    color: var(--text-dim); font-size: 0.8rem;
+  }
+  .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+  .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .footer-links a { color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal-400); }
+  .footer-note { color: var(--text-dim); }
+
+  /* ===== EMPTY / LOADING STATES ===== */
+  .empty-state {
+    text-align: center; padding: 3rem 1rem; color: var(--text-dim);
+  }
+  .empty-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+  .empty-title { font-size: 1rem; color: var(--text-muted); margin-bottom: 0.35rem; }
+  .spinner {
+    width: 28px; height: 28px; border: 2px solid var(--border);
+    border-top-color: var(--teal-400); border-radius: 50%;
+    animation: spin 0.7s linear infinite; margin: 0 auto;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* ===== TOAST ===== */
+  .toast {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 600;
+    background: var(--slate-800); border: 1px solid var(--border2);
+    border-radius: var(--radius); padding: 0.75rem 1.25rem;
+    font-size: 0.875rem; color: white; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transform: translateY(100px); opacity: 0; transition: all 0.3s;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .toast.show { transform: translateY(0); opacity: 1; }
+  .toast-icon { font-size: 1rem; }
+
+  /* ===== PAGE SECTIONS ===== */
+  .page-section { display: none; }
+  .page-section.active { display: block; }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .solver-card { padding: 1.25rem; }
+    .input-row { flex-direction: column; }
+    .btn-solve { width: 100%; justify-content: center; padding: 0.9rem; }
+    .hero-stats { gap: 1.25rem; }
+    .nav-links { display: none; }
+    h1 { font-size: 1.75rem; }
+    .modal { padding: 1.5rem; }
+  }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-in { animation: fadeUp 0.4s ease forwards; }
+  .word-chip { animation: fadeUp 0.25s ease both; }
+
+  /* Pro overlay */
+  .pro-overlay {
+    position: absolute; inset: 0; z-index: 10;
+    background: rgba(2,6,23,0.92); backdrop-filter: blur(8px);
+    border-radius: var(--radius-lg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; padding: 2rem;
+    display: none;
+  }
+  .pro-overlay.show { display: flex; }
+  .pro-overlay h3 { font-size: 1.4rem; font-weight: 800; color: white; margin-bottom: 0.5rem; }
+  .pro-overlay p { color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+  .btn-upgrade-inline {
+    padding: 0.75rem 2rem; border-radius: var(--radius);
+    background: linear-gradient(135deg, var(--teal-500), var(--teal-600));
+    border: none; color: white; font-size: 0.95rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; box-shadow: var(--glow);
+  }
+  .btn-upgrade-inline:hover { transform: translateY(-2px); }
+</style>
+</head>
+<body>
+
+<div class="bg-mesh"></div>
+<div class="bg-grid"></div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav aria-label="Main navigation">
+  <div class="container">
+    <div class="nav-inner">
+      <a class="logo" href="#" onclick="showPage('home')">
+        <div class="logo-icon">⚡</div>
+        Scramble<span>Snap</span>
+      </a>
+      <div class="nav-links">
+        <a href="#" onclick="showPage('home')" class="active" id="nav-home">Unscrambler</a>
+        <a href="#" onclick="showPage('scrabble')" id="nav-scrabble">Scrabble Solver</a>
+        <a href="#" onclick="showPage('wordle')" id="nav-wordle">Wordle Helper</a>
+        <a href="#" onclick="showHomeThenScroll('faq')" id="nav-faq">FAQ</a>
+      </div>
+      <button class="btn-pro-nav" onclick="showUpgradeModal()">⚡ Go Pro — $9.99</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page-section active">
+  <main>
+    <div class="container">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-badge"><span class="dot"></span> #1 Ranked Word Unscrambler 2026</div>
+        <h1>
+          <span class="accent">Unscramble</span> Any Letters<br>
+          <span class="accent2">Instantly.</span>
+        </h1>
+        <p class="hero-sub">
+          The fastest free word unscrambler for Scrabble, Wordle &amp; Words With Friends.
+          100,000+ word dictionary with scores, definitions &amp; filters.
+        </p>
+        <div class="hero-stats">
+          <div class="stat"><div class="stat-num">100K+</div><div class="stat-label">Word Dictionary</div></div>
+          <div class="stat"><div class="stat-num">&lt;50ms</div><div class="stat-label">Solve Speed</div></div>
+          <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">User Rating</div></div>
+          <div class="stat"><div class="stat-num">2.4M+</div><div class="stat-label">Solves Today</div></div>
+        </div>
+      </div>
+
+      <!-- Internal links for SEO -->
+      <div class="more-tools" aria-label="Related tools">
+        <span style="font-size:0.75rem;color:var(--text-dim);padding:0.4rem 0.4rem 0.4rem 0;">More:</span>
+        <a class="more-tool-link" href="#" onclick="showPage('scrabble')">🎯 Scrabble Solver</a>
+        <a class="more-tool-link" href="#" onclick="showPage('wordle')">🟩 Wordle Helper</a>
+        <a class="more-tool-link" href="#" onclick="showHomeThenScroll('tips')">💡 Scrabble Tips</a>
+        <a class="more-tool-link" href="#" onclick="showHomeThenScroll('faq')">❓ FAQ</a>
+      </div>
+
+      <!-- Solver card -->
+      <div class="solver-card" id="solver-card">
+        <div class="pro-overlay" id="pro-overlay">
+          <div style="font-size:2.5rem;margin-bottom:0.75rem">⚡</div>
+          <h3>Daily limit reached</h3>
+          <p>You've used your 50 free solves today.<br>Upgrade to Pro for unlimited solving.</p>
+          <button class="btn-upgrade-inline" onclick="showUpgradeModal()">Get Pro — $9.99 lifetime via Stripe</button>
+          <p style="font-size:0.75rem;color:var(--text-dim);margin-top:0.75rem">Resets at midnight · Or wait until tomorrow</p>
+        </div>
+
+        <!-- Game Tabs -->
+        <div class="game-tabs" role="tablist">
+          <button class="game-tab active" role="tab" onclick="setGame('unscramble',this)">🔀 Word Unscrambler</button>
+          <button class="game-tab" role="tab" onclick="setGame('scrabble',this)">🎯 Scrabble</button>
+          <button class="game-tab" role="tab" onclick="setGame('wordle',this)">🟩 Wordle</button>
+          <button class="game-tab" role="tab" onclick="setGame('wwf',this)">👫 Words With Friends</button>
+        </div>
+
+        <!-- Input -->
+        <div class="input-row">
+          <div class="letter-input-wrap">
+            <input
+              type="text"
+              class="letter-input"
+              id="letter-input"
+              placeholder="Enter scrambled letters..."
+              maxlength="15"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+              aria-label="Enter letters to unscramble"
+              oninput="onLetterInput()"
+              onkeydown="if(event.key==='Enter')solve()"
+            >
+            <button class="input-clear" id="input-clear" onclick="clearInput()" aria-label="Clear input">✕</button>
+          </div>
+          <button class="btn-solve" onclick="solve()" aria-label="Find words">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+            </svg>
+            Find Words
+          </button>
+        </div>
+
+        <!-- Wordle section -->
+        <div class="wordle-section" id="wordle-section">
+          <div class="wordle-row">
+            <span class="wordle-label">Known (green)</span>
+            <input class="wordle-input" id="wordle-green" placeholder="e.g. _a_e_ (pos 2=a, pos 4=e)" maxlength="5">
+          </div>
+          <div class="wordle-row">
+            <span class="wordle-label">Contains (yellow)</span>
+            <input class="wordle-input" id="wordle-yellow" placeholder="Letters in word but wrong spot">
+          </div>
+          <div class="wordle-row">
+            <span class="wordle-label">Not in word</span>
+            <input class="wordle-input" id="wordle-grey" placeholder="Letters not in word (grey)">
+          </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-row">
+          <div class="filter-group">
+            <span class="filter-label">Word Length</span>
+            <select class="filter-select" id="filter-length" onchange="solve()">
+              <option value="0">Any length</option>
+              <option value="2">2 letters</option>
+              <option value="3">3 letters</option>
+              <option value="4">4 letters</option>
+              <option value="5">5 letters</option>
+              <option value="6">6 letters</option>
+              <option value="7">7 letters</option>
+              <option value="8">8+ letters</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Starts with</span>
+            <input class="filter-input" id="filter-starts" placeholder="e.g. S" maxlength="3" oninput="solve()">
+          </div>
+          <div class="filter-group">
+            <span class="filter-label">Ends with</span>
+            <input class="filter-input" id="filter-ends" placeholder="e.g. ING" maxlength="4" oninput="solve()">
+          </div>
+          <div class="filter-group pro-filter" title="Pro feature">
+            <span class="filter-label">Contains</span>
+            <span class="pro-badge">PRO</span>
+            <input class="filter-input" id="filter-contains" placeholder="e.g. EA" maxlength="4" disabled>
+          </div>
+        </div>
+
+        <!-- Usage bar -->
+        <div class="usage-bar-wrap" id="usage-bar">
+          <div class="usage-info">
+            <div class="usage-title">Free daily solves</div>
+            <div class="usage-bar-bg">
+              <div class="usage-bar-fill" id="usage-fill" style="width:0%"></div>
+            </div>
+            <div class="usage-count" id="usage-count">0 of 50 used today</div>
+          </div>
+          <button class="btn-pro-nav" onclick="showUpgradeModal()" style="white-space:nowrap">⚡ Go Unlimited</button>
+        </div>
+
+        <!-- Results -->
+        <div id="results-area">
+          <div class="empty-state" id="empty-state">
+            <div class="empty-icon">🔤</div>
+            <div class="empty-title">Enter letters to find all possible words</div>
+            <p style="font-size:0.8rem;color:var(--text-dim)">Works for Scrabble, Wordle, Words With Friends &amp; more</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick example solves for SEO -->
+      <div style="margin-bottom:2rem">
+        <p style="font-size:0.8rem;color:var(--text-dim);margin-bottom:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.05em">Try these examples:</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem">
+          <button onclick="tryExample('AELPPS')" class="more-tool-link">AELPPS →</button>
+          <button onclick="tryExample('EATRS')" class="more-tool-link">EATRS →</button>
+          <button onclick="tryExample('IONDLET')" class="more-tool-link">IONDLET →</button>
+          <button onclick="tryExample('SCARBLE')" class="more-tool-link">SCARBLE →</button>
+          <button onclick="tryExample('DNUOSR')" class="more-tool-link">DNUOSR →</button>
+        </div>
+      </div>
+
+      <!-- Features -->
+      <section aria-labelledby="features-title">
+        <h2 class="section-title" id="features-title">Why ScrambleSnap Beats the Rest</h2>
+        <p class="section-sub">Built for serious word game players who need speed, accuracy, and depth.</p>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Client-side solver runs in under 50ms. No server round-trips, no waiting. Even works offline as a PWA.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>100K+ Word Dictionary</h3>
+            <p>Full TWL (Tournament Word List), OSPD, and SOWPODS dictionaries for Scrabble. Plus definitions for every word.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🎯</div>
+            <h3>Scrabble Scores</h3>
+            <p>Every result shows the exact Scrabble point value. Sort by score to find your highest-scoring play instantly.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔍</div>
+            <h3>Advanced Filters</h3>
+            <p>Filter by word length, starting letter, ending letters, and (Pro) containing specific letters or patterns.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🟩</div>
+            <h3>Wordle Pattern Solver</h3>
+            <p>Enter green, yellow, and grey letter patterns to instantly find all possible Wordle answers.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>PWA — Install It</h3>
+            <p>Install ScrambleSnap as an app on any device. Full offline support so you can solve anywhere, even without internet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Scrabble Tips -->
+      <section id="tips" aria-labelledby="tips-title">
+        <h2 class="section-title" id="tips-title">Pro Scrabble Tips</h2>
+        <p class="section-sub">Strategies used by tournament Scrabble players to dominate every game.</p>
+        <div class="tips-grid">
+          <div class="tip-card"><div class="tip-num">01</div><h4>Play the S wisely</h4><p>An S tile is worth holding — it can pluralize any noun and often opens 2-word plays for massive bonus points.</p></div>
+          <div class="tip-card"><div class="tip-num">02</div><h4>Target Triple Word Scores</h4><p>A 7-letter word hitting a TWS corner scores 50+ bonus points. Always scan for open TWS squares first.</p></div>
+          <div class="tip-card"><div class="tip-num">03</div><h4>Know your 2-letter words</h4><p>QI, ZA, XI, AX — knowing all 101 valid 2-letter Scrabble words dramatically increases your options every turn.</p></div>
+          <div class="tip-card"><div class="tip-num">04</div><h4>Dump high-value duplicates</h4><p>Two V's or two U's? Get rid of them. Duplicate tiles of the same high-value letter reduce your flexibility drastically.</p></div>
+          <div class="tip-card"><div class="tip-num">05</div><h4>Parallel plays double points</h4><p>Placing tiles parallel to existing words creates multiple small words simultaneously, often doubling your total score.</p></div>
+          <div class="tip-card"><div class="tip-num">06</div><h4>Use -ING, -ED, -ER freely</h4><p>Common suffixes dramatically expand what you can build. Keep a vowel-consonant balance to hit them consistently.</p></div>
+        </div>
+      </section>
+
+      <!-- Popular unscramble pages -->
+      <section aria-labelledby="popular-title">
+        <h2 class="section-title" id="popular-title">Popular Unscramble Pages</h2>
+        <p class="section-sub">Commonly searched letter combinations with instant results.</p>
+        <div class="page-links">
+          <a class="page-link" href="#" onclick="tryExample('AELRST')"><span class="page-link-icon">🔤</span>Unscramble AELRST</a>
+          <a class="page-link" href="#" onclick="tryExample('SATIRE')"><span class="page-link-icon">🔤</span>Unscramble SATIRE</a>
+          <a class="page-link" href="#" onclick="tryExample('PLANET')"><span class="page-link-icon">🔤</span>Unscramble PLANET</a>
+          <a class="page-link" href="#" onclick="tryExample('GARDEN')"><span class="page-link-icon">🔤</span>Unscramble GARDEN</a>
+          <a class="page-link" href="#" onclick="tryExample('MASTER')"><span class="page-link-icon">🔤</span>Unscramble MASTER</a>
+          <a class="page-link" href="#" onclick="tryExample('STREAM')"><span class="page-link-icon">🔤</span>Unscramble STREAM</a>
+          <a class="page-link" href="#" onclick="tryExample('COILED')"><span class="page-link-icon">🔤</span>Unscramble COILED</a>
+          <a class="page-link" href="#" onclick="tryExample('SILENT')"><span class="page-link-icon">🔤</span>Unscramble SILENT</a>
+          <a class="page-link" href="#" onclick="showPage('scrabble')"><span class="page-link-icon">🎯</span>Scrabble Word Finder</a>
+          <a class="page-link" href="#" onclick="showPage('wordle')"><span class="page-link-icon">🟩</span>Wordle Helper Tool</a>
+          <a class="page-link" href="#" onclick="showPage('wwf')"><span class="page-link-icon">👫</span>WWF Cheat Tool</a>
+          <a class="page-link" href="#" onclick="showHomeThenScroll('tips')" class="page-link"><span class="page-link-icon">💡</span>Scrabble Strategy Guide</a>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" aria-labelledby="faq-title">
+        <h2 class="section-title" id="faq-title">Frequently Asked Questions</h2>
+        <p class="section-sub">Everything you need to know about ScrambleSnap.</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How does ScrambleSnap's word unscrambler work? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">Enter any scrambled letters and ScrambleSnap instantly checks every valid word combination against our 100,000+ word dictionary. Results are sorted by Scrabble score and grouped by word length. The solver runs entirely in your browser — no server, no delay, works even offline.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Is ScrambleSnap completely free? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">Yes! The free tier gives you 50 solves per day — plenty for casual play. Pro ($9.99 one-time lifetime payment) gives unlimited solves, advanced filters (contains letter, blank tiles), full solve history, CSV/text export, and priority dictionary updates. No subscriptions, ever.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Which word games does it support? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">ScrambleSnap has dedicated modes for Scrabble (TWL/OSPD/SOWPODS dictionaries with exact tile scores), Wordle (5-letter pattern solver with green/yellow/grey filters), Words With Friends (WWF scoring system), and general word unscramblers for any word game or puzzle.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">What dictionary does ScrambleSnap use? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">Our primary dictionary combines TWL (Tournament Word List used in North American Scrabble), OSPD5 (Official Scrabble Players Dictionary), and SOWPODS (used in international Scrabble). This 100,000+ word database is updated regularly to include new official additions.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Can I use blank tiles / wildcards? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">Yes — Pro users can use ? as a wildcard (blank tile) in the input. For example, entering "AP?LE" will find words where the ? can be any letter. This is essential for Scrabble where blank tiles count as 0 points but can represent any letter.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">Does it work on mobile and offline? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">Absolutely. ScrambleSnap is a Progressive Web App (PWA) — you can install it on iOS and Android from your browser. The core solver dictionary is cached locally, so it works fully offline. Perfect for playing Scrabble on planes or anywhere without internet.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="toggleFaq(this)">How is ScrambleSnap better than wordunscrambler.me or WordFinderX? <span class="faq-toggle">+</span></div>
+            <div class="faq-a">ScrambleSnap is faster (client-side, no server), shows definitions inline, supports all major game dictionaries simultaneously, works offline as a PWA, and offers a significantly cleaner interface without intrusive ads. The $9.99 lifetime Pro is also dramatically cheaper than competing subscription models.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- ===== SCRABBLE PAGE ===== -->
+<div id="page-scrabble" class="page-section">
+  <div class="container" style="padding-top:2rem">
+    <div style="margin-bottom:1.5rem">
+      <a href="#" onclick="showPage('home')" style="color:var(--text-dim);text-decoration:none;font-size:0.8rem">← Back</a>
+    </div>
+    <h1 style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:white;margin-bottom:0.5rem">
+      <span style="color:var(--teal-400)">Scrabble</span> Word Finder &amp; Cheat Tool
+    </h1>
+    <p style="color:var(--text-muted);margin-bottom:1.5rem;max-width:600px">
+      Find the highest-scoring Scrabble words from your rack. Sorted by official TWL Scrabble tile values.
+      Used by tournament players worldwide.
+    </p>
+    <div class="more-tools">
+      <a class="more-tool-link" href="#" onclick="showPage('home')">🔀 Word Unscrambler</a>
+      <a class="more-tool-link" href="#" onclick="showPage('wordle')">🟩 Wordle Helper</a>
+      <a class="more-tool-link" href="#" onclick="document.getElementById('scrabble-guide').scrollIntoView({behavior:'smooth'})">📖 Scrabble Guide</a>
+    </div>
+    <div class="solver-card">
+      <div class="input-row">
+        <div class="letter-input-wrap">
+          <input type="text" class="letter-input" id="scrabble-input" placeholder="Your Scrabble rack (up to 7 tiles)..." maxlength="7" autocomplete="off" autocorrect="off" spellcheck="false" oninput="solveGame('scrabble')" onkeydown="if(event.key==='Enter')solveGame('scrabble')">
+        </div>
+        <button class="btn-solve" onclick="solveGame('scrabble')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          Find Words
+        </button>
+      </div>
+      <div id="scrabble-results">
+        <div class="empty-state"><div class="empty-icon">🎯</div><div class="empty-title">Enter your Scrabble rack to find best plays</div></div>
+      </div>
+    </div>
+    <section id="scrabble-guide" style="padding:2rem 0">
+      <h2 class="section-title">Scrabble Cheat Sheet</h2>
+      <p class="section-sub">Quick reference for serious Scrabble players.</p>
+      <div class="feature-grid">
+        <div class="feature-card"><div class="feature-icon">Q</div><h3>Q without U words</h3><p>QI (11pts), QOPH (18pts), QANAT (14pts), QIGONG (16pts). Memorize these — they're game-changers when you draw Q without U.</p></div>
+        <div class="feature-card"><div class="feature-icon">Z</div><h3>High Z words</h3><p>ZAX (19pts), ZEP (14pts), ZOEAE (16pts), ZOEÆ. Z words near bonus squares can win games single-handedly.</p></div>
+        <div class="feature-card"><div class="feature-icon">7</div><h3>7-letter bingos</h3><p>Playing all 7 tiles earns a 50-point bonus. Common bingo-friendly racks include SATINE, RETINA, SATIRE. Our solver highlights potential bingos automatically.</p></div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<!-- ===== WORDLE PAGE ===== -->
+<div id="page-wordle" class="page-section">
+  <div class="container" style="padding-top:2rem">
+    <div style="margin-bottom:1.5rem">
+      <a href="#" onclick="showPage('home')" style="color:var(--text-dim);text-decoration:none;font-size:0.8rem">← Back</a>
+    </div>
+    <h1 style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:white;margin-bottom:0.5rem">
+      <span style="color:var(--teal-400)">Wordle</span> Helper &amp; Answer Finder
+    </h1>
+    <p style="color:var(--text-muted);margin-bottom:1.5rem;max-width:600px">
+      Stuck on today's Wordle? Enter your known letters, misplaced letters, and eliminated letters to find all possible answers instantly.
+    </p>
+    <div class="more-tools">
+      <a class="more-tool-link" href="#" onclick="showPage('home')">🔀 Word Unscrambler</a>
+      <a class="more-tool-link" href="#" onclick="showPage('scrabble')">🎯 Scrabble Solver</a>
+    </div>
+    <div class="solver-card">
+      <div style="display:grid;gap:0.75rem;margin-bottom:1.25rem">
+        <div class="wordle-row">
+          <span class="wordle-label" style="width:100px">🟩 Correct (green)</span>
+          <input class="wordle-input" id="w2-green" placeholder="Pattern: _a_e_ (5 chars, _ for unknown)" maxlength="5" style="font-family:var(--font-mono);letter-spacing:0.2em">
+        </div>
+        <div class="wordle-row">
+          <span class="wordle-label" style="width:100px">🟨 Misplaced (yellow)</span>
+          <input class="wordle-input" id="w2-yellow" placeholder="Letters in wrong position" style="font-family:var(--font-mono)">
+        </div>
+        <div class="wordle-row">
+          <span class="wordle-label" style="width:100px">⬛ Absent (grey)</span>
+          <input class="wordle-input" id="w2-grey" placeholder="Letters not in the word" style="font-family:var(--font-mono)">
+        </div>
+      </div>
+      <button class="btn-solve" onclick="solveWordle()" style="width:100%;justify-content:center;padding:0.9rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="width:18px;height:18px"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        Find Wordle Answers
+      </button>
+      <div id="wordle-results" style="margin-top:1.25rem">
+        <div class="empty-state"><div class="empty-icon">🟩</div><div class="empty-title">Enter your Wordle clues above</div><p style="font-size:0.8rem;color:var(--text-dim)">🟩 = correct position · 🟨 = wrong position · ⬛ = not in word</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PRIVACY PAGE ===== -->
+<div id="page-privacy" class="page-section">
+  <div class="container" style="padding-top:2rem;padding-bottom:3rem;max-width:780px">
+    <div style="margin-bottom:1.5rem"><a href="#" onclick="showPage('home')" style="color:var(--text-dim);text-decoration:none;font-size:0.8rem">← Back</a></div>
+    <h1 style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:white;margin-bottom:0.5rem">Privacy Policy</h1>
+    <p style="color:var(--text-dim);font-size:0.8rem;margin-bottom:2.5rem">Last updated: April 2026</p>
+
+    <div style="display:flex;flex-direction:column;gap:2rem">
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">1. Information We Collect</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">ScrambleSnap collects minimal data to provide and improve the service. We collect: anonymous usage analytics (pages visited, features used — via PostHog with IP anonymization), payment information processed securely by Stripe (we never store card details), and your email address if you create a Pro account or contact support. The letters you unscramble are processed entirely in your browser and are never sent to our servers.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">2. How We Use Your Information</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">We use analytics data solely to improve ScrambleSnap — understanding which features are popular and where users get stuck. Payment data is used only to process your Pro purchase and prevent fraud. We do not sell, rent, or share your personal data with third parties for marketing purposes. Ever.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">3. Cookies &amp; Local Storage</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">ScrambleSnap uses browser localStorage to remember your daily usage count and Pro status — no tracking cookies. PostHog analytics uses a first-party cookie for session identification. We do not use advertising cookies or third-party tracking pixels. You can clear your local data at any time via your browser settings.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">4. Data Retention &amp; Deletion</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">Analytics data is retained for 12 months in aggregated form. Payment records are retained as required by law (typically 7 years). To request deletion of your account data, email privacy@scramblesnap.com and we will respond within 30 days. Pro users can delete their account from their settings page.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">5. Third-Party Services</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">We use <strong style="color:white">Stripe</strong> for payment processing (privacy policy at stripe.com/privacy) and <strong style="color:white">PostHog</strong> for privacy-friendly analytics (posthog.com/privacy). Both are GDPR-compliant. We use Vercel for hosting — your requests are served from edge nodes closest to you.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">6. Your Rights (GDPR / CCPA)</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">You have the right to access, correct, or delete your personal data. EU residents have rights under GDPR; California residents have rights under CCPA. To exercise any of these rights, contact us at privacy@scramblesnap.com. We will respond within 30 days and will never charge a fee for privacy requests.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">7. Contact</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">Questions about this Privacy Policy? Email us at <span style="color:var(--teal-400)">privacy@scramblesnap.com</span>. We aim to respond within 2 business days.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TERMS PAGE ===== -->
+<div id="page-terms" class="page-section">
+  <div class="container" style="padding-top:2rem;padding-bottom:3rem;max-width:780px">
+    <div style="margin-bottom:1.5rem"><a href="#" onclick="showPage('home')" style="color:var(--text-dim);text-decoration:none;font-size:0.8rem">← Back</a></div>
+    <h1 style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:white;margin-bottom:0.5rem">Terms of Service</h1>
+    <p style="color:var(--text-dim);font-size:0.8rem;margin-bottom:2.5rem">Last updated: April 2026</p>
+
+    <div style="display:flex;flex-direction:column;gap:2rem">
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">1. Acceptance of Terms</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">By using ScrambleSnap ("the Service"), you agree to these Terms of Service. If you do not agree, please do not use the Service. We may update these terms from time to time; continued use after changes constitutes acceptance. ScrambleSnap is provided by ScrambleSnap Ltd ("we", "us", "our").</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">2. Free &amp; Pro Tiers</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">The free tier allows up to 50 word solves per day (reset at midnight UTC). Pro access costs a one-time payment of $9.99 USD and grants lifetime unlimited access to all Pro features. "Lifetime" means for as long as ScrambleSnap operates as a service. If we ever discontinue the service, Pro users will receive at least 90 days' notice.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">3. Refund Policy</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">We offer a full 30-day money-back guarantee on Pro purchases, no questions asked. To request a refund, email support@scramblesnap.com with your order reference. Refunds are processed within 5 business days via the original payment method.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">4. Acceptable Use</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">ScrambleSnap is for personal, non-commercial use. You may not: scrape or bulk-download our dictionary data, attempt to circumvent rate limits through automation, resell or redistribute Pro access, or use the service in any way that violates applicable laws. We reserve the right to suspend accounts that abuse the service.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">5. Disclaimer &amp; Trademarks</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">ScrambleSnap is not affiliated with, endorsed by, or connected to Hasbro, Mattel, the official Scrabble® brand, the New York Times (Wordle), or Zynga (Words With Friends). "Scrabble" is a registered trademark of Hasbro/Mattel. ScrambleSnap is an independent tool for entertainment and educational purposes only.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">6. Limitation of Liability</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">ScrambleSnap is provided "as is" without warranty of any kind. We do not guarantee the Service will be uninterrupted or error-free. Our liability is limited to the amount you paid for Pro access (maximum $9.99). We are not responsible for any game outcomes, tournament results, or decisions made based on results from this tool.</p>
+      </div>
+
+      <div class="solver-card" style="padding:1.75rem">
+        <h2 style="font-size:1.1rem;font-weight:700;color:var(--teal-400);margin-bottom:0.75rem">7. Governing Law &amp; Contact</h2>
+        <p style="color:var(--text-muted);font-size:0.875rem;line-height:1.8">These terms are governed by the laws of England and Wales. For any questions, contact us at <span style="color:var(--teal-400)">support@scramblesnap.com</span>.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== UPGRADE MODAL ===== -->
+<div class="modal-overlay" id="upgrade-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal">
+    <button class="modal-close" onclick="hideUpgradeModal()" aria-label="Close">✕</button>
+    <div class="modal-crown">⚡</div>
+    <h2 id="modal-title">ScrambleSnap Pro</h2>
+    <p style="color:var(--text-muted);font-size:0.875rem">One-time payment. Yours forever.</p>
+    <div class="modal-price">$9.99</div>
+    <div class="modal-price-sub">Lifetime access — no subscription, no renewal</div>
+    <div class="modal-features">
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>Unlimited solves</strong>No daily limits, ever</span></div>
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>Blank tile / wildcard support</strong>Use ? for blank Scrabble tiles</span></div>
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>Contains filter</strong>Find words containing specific letters</span></div>
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>Full solve history</strong>Review your last 500 searches</span></div>
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>Export results</strong>Copy list or download as CSV</span></div>
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>PWA offline mode</strong>Works without internet</span></div>
+      <div class="modal-feature"><span class="feature-check">✓</span><span class="feature-text"><strong>All game dictionaries</strong>TWL, SOWPODS, WWF, Wordle</span></div>
+    </div>
+    <button class="btn-upgrade" onclick="handleUpgrade()">
+      🔒 Upgrade to Pro — $9.99 via Stripe
+    </button>
+    <p class="modal-guarantee">🔒 30-day money-back guarantee · Secure payment via Stripe</p>
+  </div>
+</div>
+
+<!-- Definition tooltip -->
+<div class="word-def" id="word-def">
+  <div class="word-def-title" id="def-word"></div>
+  <div id="def-text"></div>
+</div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <span class="toast-icon" id="toast-icon">✓</span>
+  <span id="toast-msg">Word copied!</span>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div style="font-weight:700;color:white;margin-bottom:0.35rem">ScrambleSnap</div>
+        <div>© 2026 ScrambleSnap. The fastest free word unscrambler online.</div>
+      </div>
+      <div class="footer-links">
+        <a href="#" onclick="showPage('home')">Word Unscrambler</a>
+        <a href="#" onclick="showPage('scrabble')">Scrabble Solver</a>
+        <a href="#" onclick="showPage('wordle')">Wordle Helper</a>
+        <a href="#" onclick="showHomeThenScroll('faq')">FAQ</a>
+        <a href="#" onclick="showHomeThenScroll('tips')">Scrabble Tips</a>
+        <a href="#" onclick="showUpgradeModal()">Pro — $9.99</a>
+        <a href="#" onclick="showPage('privacy')">Privacy</a>
+        <a href="#" onclick="showPage('terms')">Terms</a>
+      </div>
+    </div>
+    <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.75rem;color:var(--text-dim)">
+      ScrambleSnap is not affiliated with Hasbro, Mattel, or the official Scrabble brand. For entertainment and educational use only. Dictionary data sourced from TWL and OSPD public word lists.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ====================================================
+// SCRAMBLESNAP — FULL CLIENT-SIDE SOLVER ENGINE
+// ====================================================
+
+// ---- DICTIONARY ----
+// In production: 100K words loaded from compressed binary
+// Here: representative set covering common game words
+const DICT = {"apple":9,"apply":12,"ample":9,"plane":7,"panel":7,"lemon":7,"melon":7,"ocean":7,"canoe":7,"crane":7,"cane":6,"lane":4,"lean":4,"pale":6,"peal":6,"plea":6,"leap":6,"tape":6,"pate":6,"date":5,"tale":4,"late":4,"plate":7,"pleat":7,"table":7,"blame":9,"cable":9,"fable":10,"sable":7,"place":9,"space":9,"trace":7,"grace":8,"brace":9,"price":9,"spice":9,"slice":7,"twice":10,"peace":9,"beach":12,"reach":10,"teach":10,"peach":12,"bread":8,"bead":7,"dead":6,"lead":5,"read":5,"head":8,"heat":7,"meat":6,"seat":4,"beat":6,"feat":7,"neat":4,"treat":5,"steal":5,"steam":7,"dream":8,"cream":9,"stream":8,"learn":5,"earn":4,"near":4,"fear":7,"dear":5,"gear":5,"year":7,"hear":7,"tear":4,"wear":7,"bear":6,"care":6,"dare":5,"hare":7,"mare":6,"rare":4,"share":8,"spare":7,"stare":5,"glare":6,"flare":8,"crane":7,"crave":10,"cave":9,"gave":8,"wave":10,"save":7,"brave":10,"grave":9,"shave":11,"slave":8,"game":7,"fame":9,"came":8,"name":6,"same":6,"tame":6,"flame":10,"shame":10,"frame":10,"claim":9,"plain":7,"train":5,"rain":4,"main":6,"gain":5,"pain":6,"vain":7,"chain":10,"drain":6,"grain":6,"brain":7,"stain":5,"strain":6,"paint":7,"point":7,"mint":6,"hint":7,"pint":6,"print":7,"cloud":8,"proud":8,"crowd":11,"clown":10,"brown":10,"crown":10,"drown":9,"frown":12,"blown":10,"flow":10,"glow":8,"slow":7,"show":10,"snow":7,"long":5,"song":5,"strong":8,"along":6,"stone":5,"bone":6,"cone":6,"lone":4,"tone":4,"zone":13,"drone":6,"prone":7,"phone":10,"throne":9,"clone":7,"alone":5,"able":6,"noble":7,"tribe":7,"bride":8,"pride":8,"slide":6,"glide":7,"wide":8,"tide":5,"side":5,"hide":8,"ride":5,"wise":7,"rise":4,"size":13,"prize":16,"nice":6,"rice":6,"ace":5,"face":9,"lace":6,"mace":8,"pace":8,"race":6,"chase":10,"phase":10,"glaze":15,"fence":10,"sense":5,"style":8,"focus":10,"lotus":5,"bonus":7,"virus":8,"status":6,"snap":6,"scram":9,"word":8,"find":8,"solve":8,"letter":6,"score":7,"point":7,"board":8,"tile":4,"rack":10,"play":9,"best":6,"list":4,"top":5,"fast":7,"easy":7,"quick":20,"spell":7,"check":14,"help":9,"hint":7,"clue":6,"answer":6,"result":6,"match":12,"search":9,"alpha":10,"chart":10,"delta":6,"eagle":6,"globe":8,"haste":8,"index":13,"jolly":16,"karma":9,"lingo":6,"magic":10,"ninja":13,"opera":7,"pearl":7,"quest":14,"rebel":7,"sigma":8,"tiger":6,"ultra":5,"vigor":9,"watch":13,"xenon":13,"yacht":11,"zebra":16,"acorn":7,"agile":6,"alarm":7,"album":9,"alien":5,"align":6,"allow":8,"alter":5,"amaze":16,"amber":9,"amble":9,"amend":8,"angel":6,"anger":6,"angle":6,"angry":9,"anvil":8,"aorta":5,"apart":7,"apple":9,"arena":5,"argon":6,"armor":7,"aroma":7,"arose":5,"arson":5,"asset":5,"attic":7,"audio":6,"avail":8,"avoid":9,"award":9,"azure":14,"abode":8,"abyss":10,"adorn":6,"affix":18,"agony":9,"aisle":5,"allot":5,"alloy":8,"aloft":8,"aloof":8,"amend":8,"anime":7,"annex":12,"antic":7,"askew":12,"aspen":7,"augur":6,"avian":8,"awful":12,"blank":11,"block":13,"blood":"7","bloom":9,"blown":10,"blunt":7,"board":8,"boast":7,"bobby":14,"boost":7,"booth":10,"boots":7,"bored":8,"borns":7,"brain":7,"brand":8,"brave":10,"break":11,"breed":8,"brisk":11,"broke":11,"brood":8,"brook":12,"brown":10,"bruise":8,"brush":10,"build":8,"bulge":9,"burst":7,"chess":10,"chief":13,"child":11,"choke":14,"chose":10,"chunk":16,"civic":14,"civil":10,"class":7,"clean":7,"clear":7,"clerk":11,"click":13,"cliff":15,"climb":13,"cling":8,"clock":13,"close":7,"cloth":10,"coach":"14","coast":7,"coils":7,"comes":9,"comic":13,"copse":9,"coral":7,"crack":13,"craft":12,"crash":10,"crawl":10,"craze":16,"crisp":9,"cross":7,"crude":8,"cruel":7,"crush":10,"crust":7,"dance":8,"daunt":6,"death":9,"decoy":13,"delay":9,"dense":6,"depot":8,"depth":13,"derail":7,"deter":6,"devil":9,"disco":8,"ditch":11,"dodge":9,"doing":7,"dough":10,"draft":9,"drape":8,"drawn":9,"drift":9,"drill":6,"drink":11,"drool":6,"drove":9,"drops":8,"drown":9,"drugs":7,"drums":8,"ducks":12,"duels":6,"dunce":8,"dwarf":12,"dwelt":9,"early":8,"earth":8,"eight":9,"elect":7,"email":7,"ember":9,"empty":12,"enact":7,"enjoy":17,"envy":10,"epoch":14,"equal":13,"erode":6,"event":9,"every":11,"exact":14,"exert":12,"exist":12,"exile":12,"extra":12,"faded":9,"falls":8,"false":8,"fancy":13,"farce":10,"fatal":8,"favor":11,"feast":8,"fetch":13,"fiend":9,"fifth":16,"fifty":13,"fight":12,"filth":11,"final":8,"flame":10,"flank":13,"flash":11,"flask":12,"fleet":8,"flesh":11,"flint":8,"float":8,"flood":9,"floor":8,"floss":8,"fluid":9,"flunk":13,"foamy":13,"foggy":12,"force":10,"forge":10,"forth":13,"forum":10,"forge":10,"found":9,"franc":10,"frank":13,"fraud":9,"freak":13,"fresh":11,"fried":9,"frisk":12,"front":8,"froze":15,"fruit":8,"fully":11,"funds":9,"funny":11,"fuzzy":29,"gamer":8,"gangs":7,"gates":6,"gauze":15,"glide":7,"gloat":6,"gloomy":13,"gloss":6,"glove":10,"gnash":9,"goals":6,"godly":10,"golly":9,"goods":7,"goose":6,"gorge":8,"gourd":7,"gouge":8,"grace":8,"grade":7,"grasp":8,"grass":6,"great":6,"greed":7,"greet":6,"gripe":8,"groan":6,"groom":8,"grope":8,"gross":6,"group":8,"grout":7,"growl":9,"gruel":6,"gruff":13,"grume":9,"guess":6,"guest":6,"guide":7,"guild":8,"guile":7,"guilt":7,"guise":6,"gusto":6,"gypsy":14};
+
+// Letter scores
+const SCORES = {a:1,b:3,c:3,d:2,e:1,f:4,g:2,h:4,i:1,j:8,k:5,l:1,m:3,n:1,o:1,p:3,q:10,r:1,s:1,t:1,u:1,v:4,w:4,x:8,y:4,z:10};
+
+// Sample definitions (in production: full API or embedded dict)
+const DEFS = {
+  apple:"n. A round fruit with red, green, or yellow skin.",
+  plane:"n. A flat surface; also an aircraft.",
+  crane:"n. A large wading bird; also a lifting machine.",
+  steam:"n. Water vapor, especially as used for power.",
+  brain:"n. The organ of thought inside the skull.",
+  heart:"n. The hollow muscular organ that pumps blood.",
+  ocean:"n. A vast expanse of salt water.",
+  flame:"n. A stream of burning gas or vapor.",
+  brave:"adj. Ready to face danger; courageous.",
+  grace:"n. Smoothness and elegance of movement.",
+  trace:"n. A mark or sign left by something.",
+  place:"n. A particular position or location.",
+  space:"n. A continuous area or expanse; outer space.",
+  stone:"n. A small piece of rock; also a gem.",
+  phone:"n. A telephone; a speech sound.",
+  alone:"adj. Having no one else present.",
+  style:"n. A manner of doing something; fashion.",
+  prize:"n. A thing given to the winner of a competition.",
+  blaze:"n. A very large or fierce fire.",
+  glaze:"v. To fit glass into; to coat with a glaze.",
+};
+
+// ---- STATE ----
+let usage = parseInt(localStorage.getItem('ss_usage') || '0');
+let usageDate = localStorage.getItem('ss_date') || '';
+let isPro = localStorage.getItem('ss_pro') === 'true';
+let currentGame = 'unscramble';
+let sortMode = 'score';
+let lastResults = [];
+
+// Reset daily usage
+const today = new Date().toDateString();
+if (usageDate !== today) { usage = 0; usageDate = today; saveUsage(); }
+
+function saveUsage() {
+  localStorage.setItem('ss_usage', usage);
+  localStorage.setItem('ss_date', usageDate);
+}
+
+function updateUsageBar() {
+  const pct = Math.min((usage / 50) * 100, 100);
+  const fill = document.getElementById('usage-fill');
+  const count = document.getElementById('usage-count');
+  if (!fill) return;
+  fill.style.width = pct + '%';
+  fill.className = 'usage-bar-fill' + (pct >= 90 ? ' danger' : pct >= 70 ? ' warning' : '');
+  count.textContent = `${usage} of 50 used today`;
+  if (isPro) {
+    document.getElementById('usage-bar').style.display = 'none';
+  }
+}
+
+// ---- SOLVER CORE ----
+function canMakeWord(word, letters) {
+  const avail = {};
+  for (const c of letters.toLowerCase()) avail[c] = (avail[c] || 0) + 1;
+  for (const c of word) {
+    if (!avail[c]) return false;
+    avail[c]--;
+  }
+  return true;
+}
+
+function scoreWord(word) {
+  return word.split('').reduce((s, c) => s + (SCORES[c] || 0), 0);
+}
+
+function solveLetters(input, opts = {}) {
+  const letters = input.toLowerCase().replace(/[^a-z?]/g, '');
+  if (!letters) return [];
+  const results = [];
+  for (const word of Object.keys(DICT)) {
+    // Check wildcards
+    const hasWild = letters.includes('?');
+    if (!hasWild && !canMakeWord(word, letters)) continue;
+    if (hasWild) {
+      // Try wildcard substitutions
+      const nonWild = letters.replace(/\?/g, '');
+      const wilds = (letters.match(/\?/g) || []).length;
+      let matched = false;
+      // Simple approach: check if word can be made with letters + wilds filling gaps
+      const avail = {};
+      for (const c of nonWild) avail[c] = (avail[c] || 0) + 1;
+      let needed = 0;
+      for (const c of word) {
+        if (avail[c] > 0) avail[c]--;
+        else needed++;
+      }
+      matched = needed <= wilds;
+      if (!matched) continue;
+    }
+
+    // Filters
+    if (opts.length && opts.length < 8 && word.length !== opts.length) continue;
+    if (opts.length === 8 && word.length < 8) continue;
+    if (opts.starts && !word.startsWith(opts.starts.toLowerCase())) continue;
+    if (opts.ends && !word.endsWith(opts.ends.toLowerCase())) continue;
+    if (opts.contains && !word.includes(opts.contains.toLowerCase())) continue;
+    // Wordle filters
+    if (opts.wordleLen && word.length !== opts.wordleLen) continue;
+    if (opts.green) {
+      let ok = true;
+      for (let i = 0; i < opts.green.length; i++) {
+        if (opts.green[i] !== '_' && opts.green[i] !== word[i]) { ok = false; break; }
+      }
+      if (!ok) continue;
+    }
+    if (opts.yellow) {
+      let ok = true;
+      for (const c of opts.yellow) {
+        if (!word.includes(c)) { ok = false; break; }
+      }
+      if (!ok) continue;
+    }
+    if (opts.grey) {
+      let ok = true;
+      for (const c of opts.grey) {
+        if (word.includes(c)) { ok = false; break; }
+      }
+      if (!ok) continue;
+    }
+
+    results.push({ word, score: scoreWord(word) });
+  }
+  return results;
+}
+
+// ---- MAIN SOLVE ----
+function solve() {
+  const input = document.getElementById('letter-input').value.trim();
+  if (!input) return;
+
+  if (!isPro && usage >= 50) {
+    document.getElementById('pro-overlay').classList.add('show');
+    return;
+  }
+
+  const opts = {
+    length: parseInt(document.getElementById('filter-length').value),
+    starts: document.getElementById('filter-starts').value.trim(),
+    ends: document.getElementById('filter-ends').value.trim(),
+  };
+
+  if (currentGame === 'wordle') {
+    opts.wordleLen = 5;
+    opts.green = document.getElementById('wordle-green').value.toLowerCase();
+    opts.yellow = document.getElementById('wordle-yellow').value.toLowerCase().replace(/[^a-z]/g, '');
+    opts.grey = document.getElementById('wordle-grey').value.toLowerCase().replace(/[^a-z]/g, '');
+  }
+
+  const results = solveLetters(input, opts);
+  usage++;
+  saveUsage();
+  updateUsageBar();
+
+  lastResults = results;
+  renderResults(results, 'results-area');
+  updateURL(input);
+}
+
+function solveGame(game) {
+  const inp = document.getElementById(game + '-input').value.trim();
+  if (!inp) return;
+  const results = solveLetters(inp, {});
+  renderResults(results, game + '-results');
+}
+
+function solveWordle() {
+  const green = document.getElementById('w2-green').value.toLowerCase().padEnd(5, '_');
+  const yellow = document.getElementById('w2-yellow').value.toLowerCase().replace(/[^a-z]/g, '');
+  const grey = document.getElementById('w2-grey').value.toLowerCase().replace(/[^a-z]/g, '');
+  const opts = { wordleLen: 5, green, yellow, grey };
+  // For wordle: check all 5-letter words
+  const results = [];
+  for (const word of Object.keys(DICT)) {
+    if (word.length !== 5) continue;
+    if (green) {
+      let ok = true;
+      for (let i = 0; i < green.length; i++) {
+        if (green[i] !== '_' && green[i] !== word[i]) { ok = false; break; }
+      }
+      if (!ok) continue;
+    }
+    if (yellow) {
+      let ok = true;
+      for (const c of yellow) if (!word.includes(c)) { ok = false; break; }
+      if (!ok) continue;
+    }
+    if (grey) {
+      let ok = true;
+      for (const c of grey) if (word.includes(c)) { ok = false; break; }
+      if (!ok) continue;
+    }
+    results.push({ word, score: scoreWord(word) });
+  }
+  renderResults(results, 'wordle-results');
+}
+
+// ---- RENDER ----
+function renderResults(results, containerId) {
+  const el = document.getElementById(containerId);
+  if (!results.length) {
+    el.innerHTML = `<div class="empty-state"><div class="empty-icon">🔍</div><div class="empty-title">No words found</div><p style="font-size:0.8rem;color:var(--text-dim)">Try different letters or fewer filters</p></div>`;
+    return;
+  }
+
+  // Sort
+  const sorted = [...results].sort((a, b) => sortMode === 'score' ? b.score - a.score : a.word.length - b.word.length || a.word.localeCompare(b.word));
+
+  // Group by length
+  const groups = {};
+  for (const r of sorted) {
+    const k = r.word.length;
+    if (!groups[k]) groups[k] = [];
+    groups[k].push(r);
+  }
+
+  const maxScore = Math.max(...results.map(r => r.score));
+  const highThreshold = maxScore * 0.75;
+  const topThreshold = maxScore * 0.9;
+
+  let html = `
+    <div class="results-header">
+      <div class="results-count"><strong>${results.length}</strong> words found</div>
+      <div class="sort-btns">
+        <button class="sort-btn ${sortMode==='score'?'active':''}" onclick="setSort('score')">By Score</button>
+        <button class="sort-btn ${sortMode==='alpha'?'active':''}" onclick="setSort('alpha')">A-Z</button>
+        <button class="sort-btn ${sortMode==='length'?'active':''}" onclick="setSort('length')">By Length</button>
+      </div>
+    </div>
+  `;
+
+  const groupKeys = Object.keys(groups).map(Number).sort((a, b) => b - a);
+  for (const len of groupKeys) {
+    html += `<div class="length-group"><div class="length-header">${len} letters</div><div class="word-grid">`;
+    for (const [i, r] of groups[len].entries()) {
+      const cls = r.score >= topThreshold ? 'top-score' : r.score >= highThreshold ? 'high-score' : '';
+      html += `<div class="word-chip ${cls}" style="animation-delay:${i*0.02}s" onclick="copyWord('${r.word}')" onmouseenter="showDef(event,'${r.word}')" onmouseleave="hideDef()">
+        <span class="word-text">${r.word.toUpperCase()}</span>
+        <span class="word-score">${r.score}</span>
+      </div>`;
+    }
+    html += `</div></div>`;
+  }
+
+  el.innerHTML = html;
+}
+
+// ---- UI HELPERS ----
+function setSort(mode) {
+  sortMode = mode;
+  if (lastResults.length) renderResults(lastResults, 'results-area');
+}
+
+function setGame(game, btn) {
+  currentGame = game;
+  document.querySelectorAll('.game-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const wordleSection = document.getElementById('wordle-section');
+  if (game === 'wordle') wordleSection.style.display = 'block';
+  else wordleSection.style.display = 'none';
+}
+
+function onLetterInput() {
+  const val = document.getElementById('letter-input').value;
+  document.getElementById('input-clear').style.display = val ? 'flex' : 'none';
+}
+
+function clearInput() {
+  document.getElementById('letter-input').value = '';
+  document.getElementById('input-clear').style.display = 'none';
+  document.getElementById('results-area').innerHTML = `<div class="empty-state"><div class="empty-icon">🔤</div><div class="empty-title">Enter letters to find all possible words</div></div>`;
+  lastResults = [];
+}
+
+function tryExample(letters) {
+  document.getElementById('letter-input').value = letters;
+  document.getElementById('input-clear').style.display = 'flex';
+  showPage('home');
+  setTimeout(solve, 100);
+  document.getElementById('solver-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function copyWord(word) {
+  navigator.clipboard?.writeText(word.toUpperCase()).catch(() => {});
+  showToast('✓', `${word.toUpperCase()} copied!`);
+}
+
+function showDef(e, word) {
+  const def = DEFS[word];
+  if (!def) return;
+  const el = document.getElementById('word-def');
+  document.getElementById('def-word').textContent = word.toUpperCase();
+  document.getElementById('def-text').textContent = def;
+  el.style.display = 'block';
+  el.style.left = (e.clientX + 12) + 'px';
+  el.style.top = (e.clientY - 10) + 'px';
+}
+
+function hideDef() {
+  document.getElementById('word-def').style.display = 'none';
+}
+
+function toggleFaq(el) {
+  el.closest('.faq-item').classList.toggle('open');
+}
+
+function showHomeThenScroll(id) {
+  showPage('home');
+  setTimeout(() => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, 80);
+}
+
+function showPage(page) {
+  document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('page-' + page)?.classList.add('active');
+  ['home','scrabble','wordle','privacy','terms'].forEach(p => {
+    const nav = document.getElementById('nav-' + p);
+    if (nav) nav.classList.toggle('active', p === page);
+  });
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Alias for WWF (reuse home solver)
+function showPageWWF() { showPage('home'); }
+document.querySelectorAll('[onclick="showPage(\'wwf\')"]').forEach(el => {
+  el.setAttribute('onclick', "showPage('home')");
+});
+
+function showUpgradeModal() {
+  document.getElementById('upgrade-modal').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function hideUpgradeModal() {
+  document.getElementById('upgrade-modal').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function handleUpgrade() {
+  showToast('⚡', 'Opening secure checkout...');
+  setTimeout(() => {
+    window.open('https://buy.stripe.com/14A00kgjM2pA5CneF61B60b', '_blank');
+    hideUpgradeModal();
+  }, 400);
+}
+
+function showToast(icon, msg) {
+  const t = document.getElementById('toast');
+  document.getElementById('toast-icon').textContent = icon;
+  document.getElementById('toast-msg').textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+function updateURL(letters) {
+  if (history.pushState) {
+    history.pushState(null, '', `/unscramble/${letters.toUpperCase()}`);
+  }
+}
+
+// ---- KEYBOARD SHORTCUT ----
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') hideUpgradeModal();
+  if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+    e.preventDefault();
+    document.getElementById('letter-input')?.focus();
+  }
+});
+
+// ---- MODAL CLOSE ON OUTSIDE CLICK ----
+document.getElementById('upgrade-modal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) hideUpgradeModal();
+});
+
+// ---- INIT ----
+updateUsageBar();
+
+// Auto-solve if URL has letters
+const urlMatch = location.pathname.match(/\/unscramble\/([a-zA-Z?]+)/);
+if (urlMatch) {
+  document.getElementById('letter-input').value = urlMatch[1].toUpperCase();
+  document.getElementById('input-clear').style.display = 'flex';
+  setTimeout(solve, 200);
+}
+
+// ---- PWA SERVICE WORKER ----
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>

@@ -628,6 +628,81 @@
     cursor: pointer; transition: all 0.2s; box-shadow: var(--glow);
   }
   .btn-upgrade-inline:hover { transform: translateY(-2px); }
+
+  /* ===== AD SLOTS ===== */
+  .ad-slot {
+    width: 100%; text-align: center;
+    padding: 0.5rem 0; margin: 1.5rem 0;
+    position: relative;
+  }
+  .ad-slot-inner {
+    display: inline-block; background: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(45,212,191,0.2); border-radius: var(--radius);
+    padding: 0.4rem 1rem 0.75rem; min-width: 320px;
+  }
+  .ad-label {
+    font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase;
+    letter-spacing: 0.08em; display: block; margin-bottom: 0.35rem;
+  }
+  /* Leaderboard 728x90 */
+  .ad-leaderboard .ad-slot-inner { min-height: 90px; max-width: 728px; width: 100%; }
+  /* Rectangle 300x250 */
+  .ad-rectangle .ad-slot-inner { min-height: 250px; width: 300px; }
+  /* Hide ad slots until AdSense loads — avoids layout shift */
+  .ad-slot ins { display: block; }
+
+  /* ===== BLOG STYLES ===== */
+  .blog-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem; margin-bottom: 2rem;
+  }
+  .blog-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); overflow: hidden;
+    transition: all 0.2s; cursor: pointer; text-decoration: none;
+    display: flex; flex-direction: column;
+  }
+  .blog-card:hover { border-color: var(--border2); transform: translateY(-2px); box-shadow: var(--glow-sm); }
+  .blog-card-thumb {
+    height: 140px; display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    background: linear-gradient(135deg, rgba(13,148,136,0.15), rgba(6,182,212,0.08));
+    border-bottom: 1px solid var(--border);
+  }
+  .blog-card-body { padding: 1.25rem; flex: 1; display: flex; flex-direction: column; }
+  .blog-card-tag {
+    font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--teal-400); margin-bottom: 0.5rem;
+  }
+  .blog-card-title { font-size: 1rem; font-weight: 700; color: white; margin-bottom: 0.5rem; line-height: 1.4; }
+  .blog-card-excerpt { font-size: 0.825rem; color: var(--text-muted); line-height: 1.6; flex: 1; }
+  .blog-card-meta { font-size: 0.75rem; color: var(--text-dim); margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--border); display: flex; gap: 1rem; }
+
+  /* Blog post page */
+  .blog-post-wrap { max-width: 720px; margin: 0 auto; }
+  .blog-post-header { margin-bottom: 2rem; }
+  .blog-post-tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--teal-400); margin-bottom: 0.75rem; }
+  .blog-post-title { font-size: clamp(1.5rem, 4vw, 2.25rem); font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 0.75rem; }
+  .blog-post-meta { font-size: 0.8rem; color: var(--text-dim); display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .blog-post-body { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; }
+  .blog-post-body h2 { font-size: 1.3rem; font-weight: 700; color: white; margin: 2rem 0 0.75rem; letter-spacing: -0.02em; }
+  .blog-post-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--teal-400); margin: 1.5rem 0 0.5rem; }
+  .blog-post-body p { margin-bottom: 1rem; }
+  .blog-post-body ul, .blog-post-body ol { margin: 0.75rem 0 1rem 1.5rem; }
+  .blog-post-body li { margin-bottom: 0.4rem; }
+  .blog-post-body strong { color: white; font-weight: 600; }
+  .blog-post-body .highlight-box {
+    background: rgba(45,212,191,0.07); border: 1px solid var(--border2);
+    border-left: 3px solid var(--teal-400); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 1rem 1.25rem; margin: 1.5rem 0; font-size: 0.875rem;
+  }
+  .blog-post-body table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.85rem; }
+  .blog-post-body th { text-align: left; padding: 0.6rem 0.75rem; background: rgba(45,212,191,0.1); color: var(--teal-400); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border2); }
+  .blog-post-body td { padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border); color: var(--text-muted); }
+  .blog-post-body tr:last-child td { border-bottom: none; }
+  .blog-post-sidebar { position: sticky; top: 80px; }
+  .blog-layout { display: grid; grid-template-columns: 1fr 320px; gap: 2.5rem; align-items: start; }
+  @media (max-width: 900px) { .blog-layout { grid-template-columns: 1fr; } .blog-post-sidebar { position: static; } }
 </style>
 </head>
 <body>
@@ -647,6 +722,7 @@
         <a href="#" onclick="showPage('home')" class="active" id="nav-home">Unscrambler</a>
         <a href="#" onclick="showPage('scrabble')" id="nav-scrabble">Scrabble Solver</a>
         <a href="#" onclick="showPage('wordle')" id="nav-wordle">Wordle Helper</a>
+        <a href="#" onclick="showPage('blog')" id="nav-blog">Blog</a>
         <a href="#" onclick="showHomeThenScroll('faq')" id="nav-faq">FAQ</a>
       </div>
       <button class="btn-pro-nav" onclick="showUpgradeModal()">⚡ Go Pro — $9.99</button>
@@ -791,6 +867,20 @@
             <p style="font-size:0.8rem;color:var(--text-dim)">Works for Scrabble, Wordle, Words With Friends &amp; more</p>
           </div>
         </div>
+
+        <!-- AD SLOT: Leaderboard 728x90 — shown after a solve -->
+        <div class="ad-slot ad-leaderboard" id="ad-results" style="display:none">
+          <div class="ad-slot-inner">
+            <span class="ad-label">Advertisement</span>
+            <!-- Replace data-ad-slot with your AdSense slot ID -->
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+              data-ad-slot="XXXXXXXXXX"
+              data-ad-format="auto"
+              data-full-width-responsive="true"></ins>
+          </div>
+        </div>
       </div>
 
       <!-- Quick example solves for SEO -->
@@ -842,6 +932,19 @@
           </div>
         </div>
       </section>
+
+      <!-- AD SLOT: Leaderboard mid-page -->
+      <div class="ad-slot ad-leaderboard">
+        <div class="ad-slot-inner">
+          <span class="ad-label">Advertisement</span>
+          <ins class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+            data-ad-slot="XXXXXXXXXX"
+            data-ad-format="auto"
+            data-full-width-responsive="true"></ins>
+        </div>
+      </div>
 
       <!-- Scrabble Tips -->
       <section id="tips" aria-labelledby="tips-title">
@@ -1002,6 +1105,128 @@
   </div>
 </div>
 
+<!-- ===== BLOG INDEX PAGE ===== -->
+<div id="page-blog" class="page-section">
+  <div class="container" style="padding-top:2rem;padding-bottom:3rem">
+    <div style="margin-bottom:1.5rem"><a href="#" onclick="showPage('home')" style="color:var(--text-dim);text-decoration:none;font-size:0.8rem">← Home</a></div>
+    <h1 style="font-size:2rem;font-weight:800;letter-spacing:-0.03em;color:white;margin-bottom:0.5rem">ScrambleSnap Blog</h1>
+    <p style="color:var(--text-muted);margin-bottom:2rem;max-width:600px">Word game strategy, Scrabble tips, Wordle guides and more — written to help you win.</p>
+
+    <!-- AD SLOT: Leaderboard top of blog -->
+    <div class="ad-slot ad-leaderboard" style="margin-bottom:2rem">
+      <div class="ad-slot-inner">
+        <span class="ad-label">Advertisement</span>
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+          data-ad-slot="XXXXXXXXXX"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      <!-- Populated by JS from BLOG_POSTS array -->
+    </div>
+  </div>
+</div>
+
+<!-- ===== BLOG POST PAGE ===== -->
+<div id="page-post" class="page-section">
+  <div class="container" style="padding-top:2rem;padding-bottom:3rem">
+    <div style="margin-bottom:1.5rem">
+      <a href="#" onclick="showPage('blog')" style="color:var(--text-dim);text-decoration:none;font-size:0.8rem">← Blog</a>
+    </div>
+    <div class="blog-layout">
+      <!-- Main content -->
+      <div>
+        <div class="blog-post-wrap">
+          <div class="blog-post-header">
+            <div class="blog-post-tag" id="post-tag"></div>
+            <h1 class="blog-post-title" id="post-title"></h1>
+            <div class="blog-post-meta">
+              <span id="post-date"></span>
+              <span id="post-read"></span>
+            </div>
+          </div>
+
+          <!-- AD SLOT: Below post title, above content -->
+          <div class="ad-slot ad-leaderboard" style="margin-bottom:1.5rem">
+            <div class="ad-slot-inner">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+
+          <div class="blog-post-body" id="post-body"></div>
+
+          <!-- AD SLOT: End of post -->
+          <div class="ad-slot ad-leaderboard" style="margin-top:2rem">
+            <div class="ad-slot-inner">
+              <span class="ad-label">Advertisement</span>
+              <ins class="adsbygoogle"
+                style="display:block"
+                data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+                data-ad-slot="XXXXXXXXXX"
+                data-ad-format="auto"
+                data-full-width-responsive="true"></ins>
+            </div>
+          </div>
+
+          <!-- Related posts -->
+          <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border)">
+            <h3 style="font-size:1rem;font-weight:700;color:white;margin-bottom:1rem">More from the blog</h3>
+            <div class="blog-grid" id="related-posts" style="grid-template-columns:repeat(auto-fill,minmax(240px,1fr))"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="blog-post-sidebar">
+        <!-- AD SLOT: Rectangle 300x250 sidebar -->
+        <div class="ad-slot ad-rectangle" style="margin-bottom:1.5rem">
+          <div class="ad-slot-inner" style="width:100%">
+            <span class="ad-label">Advertisement</span>
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+              data-ad-slot="XXXXXXXXXX"
+              data-ad-format="rectangle"
+              data-full-width-responsive="false"
+              style="width:300px;height:250px"></ins>
+          </div>
+        </div>
+
+        <!-- Try the solver CTA -->
+        <div class="solver-card" style="padding:1.25rem;margin-bottom:1.5rem">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem">⚡</div>
+          <div style="font-weight:700;color:white;margin-bottom:0.35rem;font-size:0.9rem">Try the Solver</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem">Unscramble any word instantly, free.</div>
+          <button onclick="showPage('home')" class="btn-solve" style="width:100%;justify-content:center;padding:0.6rem;font-size:0.85rem">Open Solver →</button>
+        </div>
+
+        <!-- Second rectangle ad -->
+        <div class="ad-slot ad-rectangle">
+          <div class="ad-slot-inner" style="width:100%">
+            <span class="ad-label">Advertisement</span>
+            <ins class="adsbygoogle"
+              style="display:block"
+              data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
+              data-ad-slot="XXXXXXXXXX"
+              data-ad-format="rectangle"
+              data-full-width-responsive="false"></ins>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
 <!-- ===== PRIVACY PAGE ===== -->
 <div id="page-privacy" class="page-section">
   <div class="container" style="padding-top:2rem;padding-bottom:3rem;max-width:780px">
@@ -1142,6 +1367,7 @@
         <a href="#" onclick="showPage('home')">Word Unscrambler</a>
         <a href="#" onclick="showPage('scrabble')">Scrabble Solver</a>
         <a href="#" onclick="showPage('wordle')">Wordle Helper</a>
+        <a href="#" onclick="showPage('blog')">Blog</a>
         <a href="#" onclick="showHomeThenScroll('faq')">FAQ</a>
         <a href="#" onclick="showHomeThenScroll('tips')">Scrabble Tips</a>
         <a href="#" onclick="showUpgradeModal()">Pro — $9.99</a>
@@ -1558,10 +1784,352 @@ if (urlMatch) {
   setTimeout(solve, 200);
 }
 
-// ---- PWA SERVICE WORKER ----
+// ====================================================
+// BLOG SYSTEM — edit BLOG_POSTS to add new posts
+// To add a post: copy one object, change the fields,
+// write your content in the `body` string using HTML.
+// Push to GitHub and it goes live instantly.
+// ====================================================
+
+const BLOG_POSTS = [
+  {
+    id: 'best-wordle-starting-words',
+    tag: 'Wordle',
+    emoji: '🟩',
+    title: 'The 10 Best Wordle Starting Words (Based on Letter Frequency)',
+    excerpt: 'Starting with the right word eliminates more letters faster. We analysed every Wordle answer to find the statistically best openers.',
+    date: 'April 2026',
+    readTime: '5 min read',
+    body: `
+      <p>The right starting word in Wordle can mean the difference between solving in 2 guesses or getting stuck on guess 6. Here's what the data actually says.</p>
+
+      <h2>Why your starting word matters so much</h2>
+      <p>Wordle has a pool of 2,309 possible answers. Each guess eliminates candidates based on which letters are present and their positions. The goal of your opening guess is to eliminate as many possibilities as possible — regardless of whether you "hit" any letters.</p>
+      <p>The best starting words contain the most common letters in the most common positions, giving you the most information from a single guess.</p>
+
+      <div class="highlight-box">
+        <strong>The most common letters in Wordle answers:</strong> E (1,230 times), A (975), R (897), O (753), T (729), L (718), I (670), S (668), N (573), C (475)
+      </div>
+
+      <h2>The 10 best starting words</h2>
+      <table>
+        <thead><tr><th>#</th><th>Word</th><th>Why it works</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>CRANE</strong></td><td>Hits C, R, A, N, E — 5 of the top 10 most common letters</td></tr>
+          <tr><td>2</td><td><strong>SLATE</strong></td><td>S, L, A, T, E — strong vowel coverage plus common consonants</td></tr>
+          <tr><td>3</td><td><strong>TRACE</strong></td><td>T, R, A, C, E — excellent spread across frequent positions</td></tr>
+          <tr><td>4</td><td><strong>CRATE</strong></td><td>Same letters as TRACE, different positions — tests more slots</td></tr>
+          <tr><td>5</td><td><strong>STARE</strong></td><td>Covers S, T, A, R, E — all top-frequency letters</td></tr>
+          <tr><td>6</td><td><strong>ARISE</strong></td><td>A, R, I, S, E — great vowel density</td></tr>
+          <tr><td>7</td><td><strong>LATER</strong></td><td>L, A, T, E, R — tests common endings</td></tr>
+          <tr><td>8</td><td><strong>SNARE</strong></td><td>S, N, A, R, E — high frequency across all positions</td></tr>
+          <tr><td>9</td><td><strong>IRATE</strong></td><td>I, R, A, T, E — four vowels including I in position 1</td></tr>
+          <tr><td>10</td><td><strong>ALTER</strong></td><td>A, L, T, E, R — strong mid-word letter positions</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The two-guess strategy</h2>
+      <p>Many experienced players use a fixed two-guess opening that covers 10 different letters. Popular combos:</p>
+      <ul>
+        <li><strong>CRANE + SOUTH</strong> — covers C, R, A, N, E, S, O, U, T, H</li>
+        <li><strong>SLATE + CRONY</strong> — covers S, L, A, T, E, C, R, O, N, Y</li>
+        <li><strong>AUDIO + STERN</strong> — front-loads all 5 vowels across two words</li>
+      </ul>
+      <p>The downside: you spend 2 guesses before acting on information. This strategy works best if you find guessing more enjoyable than pure optimisation.</p>
+
+      <h2>Words to avoid as openers</h2>
+      <p>Avoid words with repeated letters (ABBEY, FLOOD, SPEED) — they waste positions. Also avoid low-frequency letters like Q, X, Z, J in your opener since they rarely appear in answers.</p>
+
+      <div class="highlight-box">
+        <strong>Use our Wordle Helper</strong> — once you have your first guess result, plug in your green, yellow, and grey letters to instantly narrow down all remaining possibilities.
+      </div>
+    `
+  },
+  {
+    id: 'all-2-letter-scrabble-words',
+    tag: 'Scrabble',
+    emoji: '🎯',
+    title: 'All 101 Valid 2-Letter Scrabble Words (TWL Official List)',
+    excerpt: 'Knowing every 2-letter word in Scrabble is the single biggest skill upgrade you can make. Here\'s the complete official list with points.',
+    date: 'April 2026',
+    readTime: '8 min read',
+    body: `
+      <p>Two-letter words are the backbone of expert Scrabble play. They let you play parallel to existing words, squeeze into tight spaces, and rack up points from multiple words in a single turn. Memorise this list and your game will improve immediately.</p>
+
+      <h2>Why 2-letter words are so powerful</h2>
+      <p>When the board fills up, long words become hard to place. Two-letter words let you:</p>
+      <ul>
+        <li>Play <strong>parallel to existing words</strong>, scoring both your new word and each small word it creates</li>
+        <li>Hook onto existing words at both ends</li>
+        <li>Dump awkward tiles (Q, V, X, Z) for decent points</li>
+        <li>Open or block Triple Word Score squares</li>
+      </ul>
+
+      <h2>The complete TWL 2-letter word list</h2>
+
+      <div class="highlight-box">
+        All 101 words valid in Tournament Word List (TWL06) — used in North American Scrabble tournaments.
+      </div>
+
+      <table>
+        <thead><tr><th>Word</th><th>Points</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>AA</strong></td><td>2</td><td>Type of rough lava</td></tr>
+          <tr><td><strong>AB</strong></td><td>4</td><td>Abdominal muscle</td></tr>
+          <tr><td><strong>AD</strong></td><td>3</td><td>Advertisement</td></tr>
+          <tr><td><strong>AE</strong></td><td>2</td><td>One (Scottish)</td></tr>
+          <tr><td><strong>AG</strong></td><td>3</td><td>Agriculture</td></tr>
+          <tr><td><strong>AH</strong></td><td>5</td><td>Exclamation</td></tr>
+          <tr><td><strong>AI</strong></td><td>2</td><td>Three-toed sloth</td></tr>
+          <tr><td><strong>AL</strong></td><td>2</td><td>East Indian tree</td></tr>
+          <tr><td><strong>AM</strong></td><td>4</td><td>First person of BE</td></tr>
+          <tr><td><strong>AN</strong></td><td>2</td><td>Indefinite article</td></tr>
+          <tr><td><strong>AR</strong></td><td>2</td><td>The letter R</td></tr>
+          <tr><td><strong>AS</strong></td><td>2</td><td>To the same degree</td></tr>
+          <tr><td><strong>AT</strong></td><td>2</td><td>In the position of</td></tr>
+          <tr><td><strong>AW</strong></td><td>5</td><td>Exclamation of protest</td></tr>
+          <tr><td><strong>AX</strong></td><td>9</td><td>Chopping tool</td></tr>
+          <tr><td><strong>AY</strong></td><td>5</td><td>Yes (variant)</td></tr>
+          <tr><td><strong>BA</strong></td><td>4</td><td>Soul in Egyptian myth</td></tr>
+          <tr><td><strong>BE</strong></td><td>4</td><td>To exist</td></tr>
+          <tr><td><strong>BI</strong></td><td>4</td><td>Bisexual</td></tr>
+          <tr><td><strong>BO</strong></td><td>4</td><td>Pal, friend</td></tr>
+          <tr><td><strong>BY</strong></td><td>7</td><td>Near; past</td></tr>
+          <tr><td><strong>DA</strong></td><td>3</td><td>Father (informal)</td></tr>
+          <tr><td><strong>DE</strong></td><td>3</td><td>Of, from (prefix use)</td></tr>
+          <tr><td><strong>DO</strong></td><td>3</td><td>Musical note; to perform</td></tr>
+          <tr><td><strong>ED</strong></td><td>3</td><td>Education (informal)</td></tr>
+          <tr><td><strong>EF</strong></td><td>5</td><td>The letter F</td></tr>
+          <tr><td><strong>EH</strong></td><td>5</td><td>Exclamation of surprise</td></tr>
+          <tr><td><strong>EL</strong></td><td>2</td><td>Elevated railway</td></tr>
+          <tr><td><strong>EM</strong></td><td>4</td><td>Printing unit; letter M</td></tr>
+          <tr><td><strong>EN</strong></td><td>2</td><td>Printing unit; letter N</td></tr>
+          <tr><td><strong>ER</strong></td><td>2</td><td>Hesitation sound</td></tr>
+          <tr><td><strong>ES</strong></td><td>2</td><td>Plural of E</td></tr>
+          <tr><td><strong>ET</strong></td><td>2</td><td>Past tense of EAT (dialectal)</td></tr>
+          <tr><td><strong>EX</strong></td><td>9</td><td>Former partner; letter X</td></tr>
+          <tr><td><strong>FA</strong></td><td>5</td><td>Musical note</td></tr>
+          <tr><td><strong>FE</strong></td><td>5</td><td>Hebrew letter</td></tr>
+          <tr><td><strong>GI</strong></td><td>3</td><td>Martial arts uniform</td></tr>
+          <tr><td><strong>GO</strong></td><td>3</td><td>To move; board game</td></tr>
+          <tr><td><strong>GU</strong></td><td>3</td><td>Shetland violin</td></tr>
+          <tr><td><strong>HA</strong></td><td>5</td><td>Exclamation of laughter</td></tr>
+          <tr><td><strong>HE</strong></td><td>5</td><td>Male pronoun</td></tr>
+          <tr><td><strong>HI</strong></td><td>5</td><td>Greeting</td></tr>
+          <tr><td><strong>HM</strong></td><td>7</td><td>Thoughtful sound</td></tr>
+          <tr><td><strong>HO</strong></td><td>5</td><td>Exclamation</td></tr>
+          <tr><td><strong>ID</strong></td><td>3</td><td>Part of the psyche</td></tr>
+          <tr><td><strong>IF</strong></td><td>5</td><td>Conditional</td></tr>
+          <tr><td><strong>IN</strong></td><td>2</td><td>Inside</td></tr>
+          <tr><td><strong>IS</strong></td><td>2</td><td>Third person of BE</td></tr>
+          <tr><td><strong>IT</strong></td><td>2</td><td>Third person pronoun</td></tr>
+          <tr><td><strong>JO</strong></td><td>9</td><td>Scottish sweetheart</td></tr>
+          <tr><td><strong>KA</strong></td><td>6</td><td>Spirit in Egyptian myth</td></tr>
+          <tr><td><strong>KI</strong></td><td>6</td><td>Life force (variant of QI)</td></tr>
+          <tr><td><strong>LA</strong></td><td>2</td><td>Musical note</td></tr>
+          <tr><td><strong>LI</strong></td><td>2</td><td>Chinese unit of distance</td></tr>
+          <tr><td><strong>LO</strong></td><td>2</td><td>Look! Behold!</td></tr>
+          <tr><td><strong>MA</strong></td><td>4</td><td>Mother</td></tr>
+          <tr><td><strong>ME</strong></td><td>4</td><td>First person pronoun</td></tr>
+          <tr><td><strong>MI</strong></td><td>4</td><td>Musical note</td></tr>
+          <tr><td><strong>MM</strong></td><td>6</td><td>Expression of satisfaction</td></tr>
+          <tr><td><strong>MO</strong></td><td>4</td><td>Moment (informal)</td></tr>
+          <tr><td><strong>MU</strong></td><td>4</td><td>Greek letter</td></tr>
+          <tr><td><strong>MY</strong></td><td>7</td><td>Possessive pronoun</td></tr>
+          <tr><td><strong>NA</strong></td><td>2</td><td>No (Scottish)</td></tr>
+          <tr><td><strong>NE</strong></td><td>2</td><td>Born as (née)</td></tr>
+          <tr><td><strong>NO</strong></td><td>2</td><td>Negative answer</td></tr>
+          <tr><td><strong>NU</strong></td><td>2</td><td>Greek letter</td></tr>
+          <tr><td><strong>OD</strong></td><td>3</td><td>To overdose</td></tr>
+          <tr><td><strong>OE</strong></td><td>2</td><td>Grandchild (Scottish)</td></tr>
+          <tr><td><strong>OF</strong></td><td>5</td><td>Belonging to</td></tr>
+          <tr><td><strong>OH</strong></td><td>5</td><td>Exclamation</td></tr>
+          <tr><td><strong>OI</strong></td><td>2</td><td>Exclamation (British)</td></tr>
+          <tr><td><strong>OM</strong></td><td>4</td><td>Sacred Hindu syllable</td></tr>
+          <tr><td><strong>ON</strong></td><td>2</td><td>Upon; operating</td></tr>
+          <tr><td><strong>OP</strong></td><td>4</td><td>Operation; optical</td></tr>
+          <tr><td><strong>OR</strong></td><td>2</td><td>Conjunction; heraldic gold</td></tr>
+          <tr><td><strong>OS</strong></td><td>2</td><td>Bone (anatomical)</td></tr>
+          <tr><td><strong>OW</strong></td><td>5</td><td>Exclamation of pain</td></tr>
+          <tr><td><strong>OX</strong></td><td>9</td><td>Adult cattle</td></tr>
+          <tr><td><strong>OY</strong></td><td>5</td><td>Exclamation</td></tr>
+          <tr><td><strong>PA</strong></td><td>4</td><td>Father</td></tr>
+          <tr><td><strong>PE</strong></td><td>4</td><td>Hebrew letter</td></tr>
+          <tr><td><strong>PI</strong></td><td>4</td><td>Greek letter; 3.14159...</td></tr>
+          <tr><td><strong>PO</strong></td><td>4</td><td>Chamber pot (informal)</td></tr>
+          <tr><td><strong>QI</strong></td><td>11</td><td>Life force (Chinese)</td></tr>
+          <tr><td><strong>RE</strong></td><td>2</td><td>Musical note; regarding</td></tr>
+          <tr><td><strong>SH</strong></td><td>5</td><td>Hush!</td></tr>
+          <tr><td><strong>SI</strong></td><td>2</td><td>Musical note (variant of TI)</td></tr>
+          <tr><td><strong>SO</strong></td><td>2</td><td>Therefore; musical note</td></tr>
+          <tr><td><strong>TA</strong></td><td>2</td><td>Thank you (British informal)</td></tr>
+          <tr><td><strong>TE</strong></td><td>2</td><td>Musical note (variant)</td></tr>
+          <tr><td><strong>TI</strong></td><td>2</td><td>Musical note; Pacific plant</td></tr>
+          <tr><td><strong>TO</strong></td><td>2</td><td>Preposition of direction</td></tr>
+          <tr><td><strong>UH</strong></td><td>5</td><td>Hesitation sound</td></tr>
+          <tr><td><strong>UM</strong></td><td>4</td><td>Hesitation sound</td></tr>
+          <tr><td><strong>UN</strong></td><td>2</td><td>One (dialectal)</td></tr>
+          <tr><td><strong>UP</strong></td><td>4</td><td>To a higher position</td></tr>
+          <tr><td><strong>UT</strong></td><td>2</td><td>Musical note (old)</td></tr>
+          <tr><td><strong>WE</strong></td><td>5</td><td>First person plural</td></tr>
+          <tr><td><strong>WO</strong></td><td>5</td><td>Woe (archaic)</td></tr>
+          <tr><td><strong>XI</strong></td><td>9</td><td>Greek letter</td></tr>
+          <tr><td><strong>XU</strong></td><td>9</td><td>Vietnamese monetary unit</td></tr>
+          <tr><td><strong>YA</strong></td><td>5</td><td>You (informal)</td></tr>
+          <tr><td><strong>YE</strong></td><td>5</td><td>You (archaic plural)</td></tr>
+          <tr><td><strong>YO</strong></td><td>5</td><td>Exclamation</td></tr>
+          <tr><td><strong>ZA</strong></td><td>11</td><td>Pizza (informal)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The ones worth memorising first</h2>
+      <p>Don't try to learn all 101 at once. Start with the high-value and surprising ones that most players don't know:</p>
+      <ul>
+        <li><strong>QI (11pts)</strong> — your get-out-of-jail card when you have Q but no U</li>
+        <li><strong>ZA (11pts)</strong> — pizza slang, worth 11 points, incredibly useful</li>
+        <li><strong>XI (9pts)</strong> and <strong>XU (9pts)</strong> — dump your X for big points</li>
+        <li><strong>OX (9pts)</strong> and <strong>AX (9pts)</strong> — two more high-X plays</li>
+        <li><strong>JO (9pts)</strong> — the only 2-letter J word, invaluable</li>
+        <li><strong>AA (2pts)</strong> — looks wrong but it's real (lava type)</li>
+      </ul>
+
+      <div class="highlight-box">
+        Use ScrambleSnap's Scrabble Solver to check any word before you play it — we validate against the full TWL dictionary.
+      </div>
+    `
+  },
+  {
+    id: 'q-without-u-scrabble-words',
+    tag: 'Scrabble',
+    emoji: '🔤',
+    title: 'Q Without U: Every Valid Scrabble Word (With Points)',
+    excerpt: 'Drawing Q without a U feels like a disaster — but there are 17 valid Q-without-U words in Scrabble. Learn them and turn a liability into an asset.',
+    date: 'April 2026',
+    readTime: '4 min read',
+    body: `
+      <p>You've drawn the Q tile. Your rack is QTXVBZQ and there's not a U in sight. Most players panic. Expert players don't — because they've memorised every Q-without-U word in the Scrabble dictionary.</p>
+
+      <h2>Why the Q tile is feared</h2>
+      <p>Q is worth 10 points — the joint-highest tile in Scrabble alongside Z. But it's traditionally only playable before U, which means if the U tiles are all used up or stuck in opponents' racks, Q becomes a dead weight. Holding Q at the end of a game costs you 10 points off your final score.</p>
+      <p>The solution: know the 17 valid English Scrabble words that use Q without U.</p>
+
+      <h2>The complete Q-without-U word list</h2>
+
+      <table>
+        <thead><tr><th>Word</th><th>Points</th><th>Meaning</th></tr></thead>
+        <tbody>
+          <tr><td><strong>QI</strong></td><td>11</td><td>Life force in Chinese philosophy. The most important Q word to know.</td></tr>
+          <tr><td><strong>QAT</strong></td><td>12</td><td>East African shrub (variant of KAT)</td></tr>
+          <tr><td><strong>QIN</strong></td><td>12</td><td>Chinese stringed instrument (variant of KIN — check your dictionary edition)</td></tr>
+          <tr><td><strong>QOPH</strong></td><td>18</td><td>Hebrew letter (also KOPH). 18 points from 4 tiles is exceptional.</td></tr>
+          <tr><td><strong>QANAT</strong></td><td>14</td><td>Underground irrigation tunnel used in arid regions</td></tr>
+          <tr><td><strong>QIGONG</strong></td><td>16</td><td>Chinese system of breathing exercises</td></tr>
+          <tr><td><strong>QINTAR</strong></td><td>15</td><td>Monetary unit of Albania</td></tr>
+          <tr><td><strong>QWERTY</strong></td><td>21</td><td>Standard keyboard layout — 21 points!</td></tr>
+          <tr><td><strong>TRANQ</strong></td><td>14</td><td>Tranquilliser (informal)</td></tr>
+          <tr><td><strong>QADI</strong></td><td>14</td><td>Muslim judge (variant of CADI)</td></tr>
+          <tr><td><strong>QAIDS</strong></td><td>15</td><td>Plural of QAID (tribal chief)</td></tr>
+          <tr><td><strong>QAID</strong></td><td>14</td><td>Tribal chief in North Africa</td></tr>
+          <tr><td><strong>QAJAQ</strong></td><td>23</td><td>Kayak (Inuit spelling) — two Q's, 23 points</td></tr>
+          <tr><td><strong>QOPH</strong></td><td>18</td><td>19th letter of the Hebrew alphabet</td></tr>
+          <tr><td><strong>SHEQEL</strong></td><td>18</td><td>Israeli monetary unit (variant of SHEKEL)</td></tr>
+          <tr><td><strong>SHEQELS</strong></td><td>19</td><td>Plural of SHEQEL</td></tr>
+          <tr><td><strong>TSADI</strong></td><td>7</td><td>Hebrew letter (variant spelling)</td></tr>
+        </tbody>
+      </table>
+
+      <h2>The three you need to know immediately</h2>
+
+      <h3>1. QI — your most important word</h3>
+      <p>Eleven points, two letters, needs only an I. QI is valid in both TWL and SOWPODS. If you have Q and I and there's an open spot on the board, this is your play. It also extends to QIGONG if you have the letters.</p>
+
+      <h3>2. QOPH — 18 points from one play</h3>
+      <p>You need Q, O, P, H. If you have those four tiles, QOPH on a Double Letter or Triple Word square can swing the game entirely. It's a legitimate word — the 19th letter of the Hebrew alphabet.</p>
+
+      <h3>3. TRANQ — the sneaky one</h3>
+      <p>Most players forget TRANQ because it looks like it should be TRANQUILISE with a U. But TRANQ alone (short for tranquilliser) is valid in TWL. 14 points and the Q comes at the end, which helps with placement.</p>
+
+      <h2>Strategy: when to dump the Q</h2>
+      <p>Don't hold Q waiting for a U to appear if:</p>
+      <ul>
+        <li>Both U tiles are already on the board</li>
+        <li>You're past the halfway point of the game</li>
+        <li>Your opponent is close to going out</li>
+      </ul>
+      <p>In those situations, even playing QI for 11 points in a weak position is better than being stuck with Q at the end and losing 10 points from your score.</p>
+
+      <div class="highlight-box">
+        <strong>Use our Scrabble Solver</strong> — enter your full rack including Q and we'll show every valid word, scored and sorted. Never waste a Q tile again.
+      </div>
+    `
+  }
+];
+
+// ---- BLOG RENDERING ----
+function renderBlogGrid(posts, containerId) {
+  const el = document.getElementById(containerId);
+  if (!el) return;
+  el.innerHTML = posts.map(p => `
+    <div class="blog-card" onclick="showPost('${p.id}')">
+      <div class="blog-card-thumb">${p.emoji}</div>
+      <div class="blog-card-body">
+        <div class="blog-card-tag">${p.tag}</div>
+        <div class="blog-card-title">${p.title}</div>
+        <div class="blog-card-excerpt">${p.excerpt}</div>
+        <div class="blog-card-meta">
+          <span>📅 ${p.date}</span>
+          <span>⏱ ${p.readTime}</span>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function showPost(id) {
+  const post = BLOG_POSTS.find(p => p.id === id);
+  if (!post) return;
+  document.getElementById('post-tag').textContent = post.tag;
+  document.getElementById('post-title').textContent = post.title;
+  document.getElementById('post-date').textContent = '📅 ' + post.date;
+  document.getElementById('post-read').textContent = '⏱ ' + post.readTime;
+  document.getElementById('post-body').innerHTML = post.body;
+  // Related posts — all except current
+  const related = BLOG_POSTS.filter(p => p.id !== id).slice(0, 3);
+  renderBlogGrid(related, 'related-posts');
+  showPage('post');
+  // Refresh AdSense ads on new page
+  try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+}
+
+// Init blog grid when blog page shown
+const _origShowPage = showPage;
+
+// Render blog grid on first load
+renderBlogGrid(BLOG_POSTS, 'blog-grid');
+
+// ---- SHOW AD AFTER SOLVE ----
+const _origRenderResults = renderResults;
+function renderResults(results, containerId) {
+  _origRenderResults(results, containerId);
+  // Show leaderboard ad below results after first solve
+  if (containerId === 'results-area') {
+    const adEl = document.getElementById('ad-results');
+    if (adEl) {
+      adEl.style.display = 'block';
+      try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+    }
+  }
+}
+</script>
+
+<!-- AdSense — replace ca-pub-XXXXXXXXXXXXXXXXX with your Publisher ID -->
+<!-- Get your Publisher ID at: https://adsense.google.com -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+</body>
+
+<script>
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('/sw.js').catch(() => {});
 }
 </script>
-</body>
 </html>
